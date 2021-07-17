@@ -1,11 +1,12 @@
 [Variables]
 @includeV=#@#Vars.inc
 @includeVer=#@#Version.inc
+SettingsSize=(#SCREENAREAWIDTH#/1920)
 SetTP=20
-SetW=(1200*#SCREENAREAWIDTH#/1920)
-SetH=(700*#SCREENAREAWIDTH#/1920)
+SetW=(1200*#SettingsSize#)
+SetH=(700*#SettingsSize#)
 SetL=200
-R=20
+SetR=20
 SetSH=(#SetH#+#SetTP#*2)
 
 [mL]
@@ -48,7 +49,7 @@ Shape2=Ellipse ([##CURRENTSECTION#] = 1 ? 40 : 10),10,5,5 | StrokeWidth 0 | Fill
 DynamicVariables=1
 Fill=Fill Color ([##CURRENTSECTION#] = 1 ? 35 : 181),([##CURRENTSECTION#] = 1 ? 209 : 181),([##CURRENTSECTION#] = 1 ? 96 : 181)
 Container=ContentContainer
-Leftmouseupaction=[!WriteKeyvalue Variables "#CURRENTSECTION#" "([##CURRENTSECTION#] = 1 ? 0 : 1)" "#@#Vars.inc"][!Refresh][!Delay 1000][!Refresh "ModularPlayers\Player"]
+Leftmouseupaction=[!WriteKeyvalue Variables "#CURRENTSECTION#" "([##CURRENTSECTION#] = 1 ? 0 : 1)" "#@#Vars.inc"][!Refresh][!Delay 1000][!Refresh "ModularPlayers\Main"]
 
 [ShowInToolbar]
 Measure=Plugin
@@ -56,16 +57,9 @@ Plugin=ShowInToolbar
 WindowTitle=JaxOriginals - #CURRENTCONFIG#
 WindowIcon=Logo.ico
 
-[DefaultB]
-Measure=Plugin
-Plugin=MagickMeter
-Image=Rectangle 0,0,#SetW#,#SetSH#,#R#,#R# | Shadow 60,10,10,10,1
-Image2=Rectangle 0,0,(#SetW#),(#SetSH#),(#R#),(#R#) | Color 18,18,18
-Image3=Rectangle (#SetL#),(#SetTP#),(#SetW#-#SetL#-#SetTP#),(#SetH#),(#R#/2),(#R#/2) | StrokeWidth 0 | Color 23,23,23
-
 [B]
 Meter = Image
-MeasureName = DefaultB
+ImageName=#@#Images\SetBack.png
 
 [Logo]
 Meter=Image
@@ -139,12 +133,12 @@ MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255,(#Bar
 ; Fill=Fill Color 255,255,255,(#BarHandler# = 5 ? 220 : 0)
 ; MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255,(#BarHandler# = 5 ? 220 : 100)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 ; MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255,(#BarHandler# = 5 ? 220 : 0)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-[Render]
-Meter=Shape
-MeterStyle=PageBox
-Fill=Fill Color 255,255,255,(#BarHandler# = 6 ? 220 : 0)
-MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255,(#BarHandler# = 6 ? 220 : 100)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255,(#BarHandler# = 6 ? 220 : 0)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+; [Render]
+; Meter=Shape
+; MeterStyle=PageBox
+; Fill=Fill Color 255,255,255,(#BarHandler# = 6 ? 220 : 0)
+; MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255,(#BarHandler# = 6 ? 220 : 100)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+; MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255,(#BarHandler# = 6 ? 220 : 0)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 
 ;===========================================================================================================================
 ;===========================================================================================================================
@@ -184,11 +178,11 @@ ImageTint=(#BarHandler# = 4 ? 0 : 255),(#BarHandler# = 4 ? 0 : 255),(#BarHandler
 ; MeterStyle=PageIcon
 ; Greyscale=(#BarHandler# = 5 ? 1 : 0)
 ; ImageTint=(#BarHandler# = 5 ? 0 : 255),(#BarHandler# = 5 ? 0 : 255),(#BarHandler# = 5 ? 0 : 255)
-[RenderIcon]
-Meter=Image
-MeterStyle=PageIcon
-Greyscale=(#BarHandler# = 6 ? 1 : 0)
-ImageTint=(#BarHandler# = 6 ? 0 : 255),(#BarHandler# = 6 ? 0 : 255),(#BarHandler# = 6 ? 0 : 255)
+; [RenderIcon]
+; Meter=Image
+; MeterStyle=PageIcon
+; Greyscale=(#BarHandler# = 6 ? 1 : 0)
+; ImageTint=(#BarHandler# = 6 ? 0 : 255),(#BarHandler# = 6 ? 0 : 255),(#BarHandler# = 6 ? 0 : 255)
 
 ;===========================================================================================================================
 ;===========================================================================================================================
@@ -223,10 +217,10 @@ MeterStyle=sString | PageText
 ; Meter=String
 ; Text=Media
 ; MeterStyle=sString | PageText
-[6]
-Meter=String
-Text=Render
-MeterStyle=sString | PageText
+; [6]
+; Meter=String
+; Text=Render
+; MeterStyle=sString | PageText
 
 ;===========================================================================================================================
 ;===========================================================================================================================
@@ -291,7 +285,7 @@ MeterStyle=sString | PageText
 Meter=Shape
 X=#SetL#
 Y=#SetTP#
-Shape=Rectangle (0),(0),(#SetW#-#SetL#-#SetTP#),(#SetH#),(#R#/2),(#R#/2) | StrokeWidth 0 | Fill Color 255,255,255
+Shape=Rectangle (0),(0),(#SetW#-#SetL#-#SetTP#),(#SetH#),(#SetR#/2),(#SetR#/2) | StrokeWidth 0 | Fill Color 255,255,255
 [Dumy]
 Meter=String
 Container=ContentContainer

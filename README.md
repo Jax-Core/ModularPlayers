@@ -6,6 +6,9 @@
 
 A gallery of hand-crafted rainmeter music players with built in preview and settings menu. Download rainmeter [here](https://www.rainmeter.net/).
 
+## Gesture actions
+For some of the styles there would be only one button for play pause. By swiping left or right on the skin you can play the previous or next song.
+
 ## Styles
 <p float="left" align="center">
   <img src="https://github.com/EnhancedJax/ModularPlayers/blob/main/%40Resources/Images/Preview/Simple.png"/>

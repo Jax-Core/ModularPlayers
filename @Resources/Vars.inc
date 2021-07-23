@@ -16,3 +16,7 @@ Style=Simple
 BlurModulate=(#ColorMode# = 1 ? 80 : 120),70,100
 BlurRadius=30
 BlurSigma=10
+
+AutoHide=0
+HideAlbum=0
+SideGlow=1

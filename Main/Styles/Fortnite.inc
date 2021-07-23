@@ -50,7 +50,7 @@ This=180 | #Grad.1# ; 0.0 | #Grad.2# ; 1.0
 Shape2=Rectangle 0,0,#GW#,#GH# | StrokeWidth 0 | Fill Color #Accent.2#,(255*#TweenNode#/100)
 Shape3=Rectangle 0,0,(7*#scale#),(#GH#) | StrokeWidth 0 | fill Color #Accent.0#,150
 Shape4=Rectangle 0,(#GH#),(7*#scale#),(-#GH#*[mProgressPer]) | StrokeWidth 0 | fill Color #Accent.0#
-Shape5=Path That | StrokeWidth 0 | Fill Color #Accent.1#,(255*#TweenNode#/100) | OffSet (80-80*#scale#*#Tweennode#/100),0
+Shape5=Path That | StrokeWidth 0 | Fill Color #Accent.1#,(255*#TweenNode#/100) | OffSet (80*#scale#-80*#scale#*#Tweennode#/100),0
 That=(#GW#-80*#scale#),0 | LineTo #GW#,0 | LineTo #GW#,#GH# | LineTo (#GW#-70*#Scale#),#GH# | ClosePath 1
 DynamicVariables=1
 LeftMouseDownAction=[!Setvariable Mouse.0Pos $MouseX$]
@@ -84,6 +84,7 @@ FontWeight=600
 FontFace=Roboto Bold
 MeasureName=mTrack
 Group=Tween
+UpdateDivider=1
 [SArtist]
 Meter=String
 MeterStyle=S

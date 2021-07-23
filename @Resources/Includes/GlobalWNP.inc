@@ -12,13 +12,21 @@ Measure=Plugin
 Plugin=WebNowPlaying
 PlayerType=State
 IfCondition=mState = (#Control# = 1 ? 1 : 100)
-IfTrueAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw]
+IfTrueAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!UpdateMeasure mHide][!Redraw]
 IfCondition2=mState = (#Control# = 1 ? 2 : 100)
-IfTrueAction2=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw]
+IfTrueAction2=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!UpdateMeasure mHide][!Redraw]
 IfCondition3=mState = (#Control# = 1 ? 0 : 100)
-IfTrueAction3=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw]
+IfTrueAction3=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!UpdateMeasure mHide][!Redraw]
 DynamicVariables=1
 UpdateDivider=(1000/#Rm.Updiv#)
+
+[mHide]
+Measure=calc
+Formula=#AutoHide#
+ifcondition=(mHide = 1) && (mState = 0)
+iftrueaction=[!HideFade]
+IfFalseAction=[!ShowFade]
+UpdateDivider=-1
 
 [mArtist]
 Measure=Plugin

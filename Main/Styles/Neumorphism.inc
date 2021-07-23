@@ -49,6 +49,7 @@ X=(#P#+4)
 Y=(#GH#/2-([SName:H]+[SArtist:H]-5*#scale#)/2+4)
 W=([PlayPause:X]-#P#*3)
 DynamicVariables=1
+UpdateDivider=(#Rm.Updiv#/1000)
 ClipString=1
 FontSize=(16*#scale#)
 FontFace=Nunito Sans SemiBold

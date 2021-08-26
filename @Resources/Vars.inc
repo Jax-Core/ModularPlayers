@@ -10,7 +10,7 @@ ColorMode=0
 OppositeColor=255,255,255
 MainColor=12,12,12
 
-Style=Simple
+Style=MIUI
 
 ;RenderBlur (Brightness, Saturation, Hue)
 BlurModulate=(#ColorMode# = 1 ? 80 : 120),70,100

@@ -7,15 +7,14 @@ function check()
     SaveLocation = SKIN:GetVariable('@')..'Actions'
     if ParsedVer == CoreVer then
         print('Up2date - '..ParsedVer..'=='..CoreVer)
-        SKIN:Bang('!ActivateConfig', '#JaxCore\\Main', 'Home.ini')
+        SKIN:Bang('!UpdateMeasure', 'JaxCoreYes')
     elseif ParsedVer <= CoreVer then
         print('Beta - '..ParsedVer..'<='..CoreVer)
-        SKIN:Bang('!ActivateConfig', '#JaxCore\\Main', 'Home.ini')
+        SKIN:Bang('!UpdateMeasure', 'JaxCoreYes')
     else
         print('Update required - '..ParsedVer..'>='..CoreVer)
         SKIN:Bang('!WriteKeyValue', 'Data', 'DownloadLink', 'https://github.com/EnhancedJax/-JaxCore/releases/download/v'..ParsedVerFull..'/JaxCore_v'..ParsedVerFull..'.rmskin', SavePos)
         SKIN:Bang('!WriteKeyValue', 'Data', 'SaveLocation', SaveLocation, SavePos)
-        SKIN:Bang('!UpdateMeasure', 'Update')
+        SKIN:Bang('!UpdateMeasure', 'JaxCoreNo')
     end
-    SKIN:Bang('!DeactivateConfig')
 end

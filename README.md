@@ -29,6 +29,7 @@ For some of the styles there would be only one button for play pause. By swiping
 # Installation
 ### Requirements
 Rainmeter 4.4 beta or newer: [Download here](https://www.rainmeter.net/)
+Spicetify-cli for Spotify to function.
 
 ### Installation Instructions
 1. Install rainmeter
@@ -44,3 +45,38 @@ via Discord: **Jax#1090**
 
 ## Special thanks to
 [@khanhas](https://github.com/khanhas) for the MagickMeter plugin
+
+# How to install Spicetify-cli
+
+Follow this guide here to basic installation: https://github.com/khanhas/spicetify-cli/wiki/Guide-for-Rainmeter-user
+
+If spotify is blank after installation, follow the following guide:
+***
+- uninstall spotify
+- delete both spicetify folders in your user folder (.spicetify, and spicetify-cli)
+- delete your spotify folder in ```%appdata%\local```
+- delete everything in ```%temp%```
+
+- install this ver of spotify https://spotify.en.uptodown.com/windows/download/3764443
+- then create a folder in ```%appdata%local/spotify```
+call it `Update`
+
+- and set the user group permissions so that trusted installer and system have permissions blocked
+
+- open powershell and paste this into it 
+`Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression`
+
+- type `spicetify` and hit enter once
+
+- run this ```spicetify backup apply enable-devtool```
+
+- close spotify
+
+
+Now you can do your themes and extensions
+here is an example:
+```
+spicetify config inject_css 0 replace_colors 0
+spicetify config extensions webnowplaying.js
+spicetify apply
+```

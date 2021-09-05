@@ -50,7 +50,7 @@ via Discord: **Jax#1090**
 
 Follow this guide here to basic installation: https://github.com/khanhas/spicetify-cli/wiki/Guide-for-Rainmeter-user
 
-If spotify is blank after installation, follow the following guide:
+If spotify is blank after installation, or the player doesn't work despite following all the steps, follow the following guide:
 ***
 - uninstall spotify
 - delete both spicetify folders in your user folder (.spicetify, and spicetify-cli)

@@ -57,7 +57,7 @@ If spotify is blank after installation, follow the following guide:
 - delete your spotify folder in ```%appdata%\local```
 - delete everything in ```%temp%```
 
-- install this ver of spotify https://spotify.en.uptodown.com/windows/download/3764443
+- install this ver of spotify https://spotify.en.uptodown.com/windows/download/3882445
 - then create a folder in ```%appdata%local/spotify```
 call it `Update`
 

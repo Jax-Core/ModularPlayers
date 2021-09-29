@@ -48,7 +48,24 @@ via Discord: **Jax#1090**
 
 # How to install Spicetify-cli
 
-Follow this guide here to basic installation: https://github.com/khanhas/spicetify-cli/wiki/Guide-for-Rainmeter-user
+Open Powershell, run following commands, one by one:
+
+```
+Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression
+spicetify
+spicetify config extensions webnowplaying.js
+```
+
+If you just want WebNowPlaying without changing UI color, CSS, run this:
+```
+spicetify config inject_css 0 replace_colors 0
+```
+Finally, run:
+```
+spicetify backup apply
+```
+
+Above guide provided by spicetify: https://github.com/khanhas/spicetify-cli/wiki/Guide-for-Rainmeter-user
 
 If spotify is blank after installation, or the player doesn't work despite following all the steps, follow the following guide:
 ***

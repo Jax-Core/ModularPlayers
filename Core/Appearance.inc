@@ -47,12 +47,12 @@ Y=([Option00:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [ColorMode:0]
 Meter=String
 Text=Dark
-FontColor=(#ColorMode# = 0 ? 0 : 255),(#ColorMode# = 0 ? 0 : 255),(#ColorMode# = 0 ? 0 : 255)
+FontColor=[&Func:returnBool('ColorMode', '1', '#Set.Text_Color#', '#Set.Pri_color#')]
 MeterStyle=Set.String:S | Set.PickOption_0:S
 [ColorMode:1]
 Meter=String
 Text=Light
-FontColor=(#ColorMode# = 1 ? 0 : 255),(#ColorMode# = 1 ? 0 : 255),(#ColorMode# = 1 ? 0 : 255)
+FontColor=[&Func:returnBool('ColorMode', '0', '#Set.Text_Color#', '#Set.Pri_color#')]
 MeterStyle=Set.String:S | Set.PickOption_1:S
 ; ;================================================================================================================================================================================
 
@@ -68,9 +68,9 @@ MeterStyle=Set.String:S | Set.OptionCat:S
 X=(20*[Set.S])R
 Y=r
 Shape=Rectangle  0,0,(([ContentContainer:W]-120*[Set.S])/5),(([ContentContainer:W]-120*[Set.S])/5),#set.R# | StrokeWidth 0 | Extend Fill
-Fill=Fill Color 255,255,255,10
-MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255,150"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255,10"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+Fill=Fill Color #Set.Text_Color#,10
+MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Text_Color#,150"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Text_Color#,10"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 DynamicVariables=1
 Container=ContentContainer
 [Box1]

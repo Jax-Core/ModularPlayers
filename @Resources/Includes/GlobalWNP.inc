@@ -26,7 +26,7 @@ Formula=#AutoHide#
 ifcondition=(mHide = 1) && (mState = 0)
 iftrueaction=[!HideFade]
 IfFalseAction=[!ShowFade]
-UpdateDivider=-1
+UpdateDivider=(1000/#Rm.Updiv#)
 
 [mArtist]
 Measure=Plugin

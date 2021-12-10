@@ -3,14 +3,14 @@ R=(20*#scale#)
 
 
 Scale=1
-PLayer=WNP
-NPName=Spotify
+PLayer=NP
+NPName=WMP
 
 ColorMode=0
 OppositeColor=255,255,255
 MainColor=12,12,12
 
-Style=MIUI
+Style=Blur
 
 ;RenderBlur (Brightness, Saturation, Hue)
 BlurModulate=(#ColorMode# = 1 ? 80 : 120),70,100

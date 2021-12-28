@@ -1,23 +1,13 @@
-[Rainmeter]
-ContextTitle5=Align Left
-ContextAction5=[!WriteKeyValue Variables Left "#ROOTCONFIGFOLDER#Player\Styles\Side.inc"]
-ContextTitle6=Align Center
-ContextAction6=[!WriteKeyValue Variables Center "#ROOTCONFIGFOLDER#Player\Styles\Side.inc"]
-ContextTitle7=Align Right
-ContextAction7=[!WriteKeyValue Variables Right "#ROOTCONFIGFOLDER#Player\Styles\Side.inc"]
-
 [Variables]
-GW=(450*#scale#)
+GW=(200*#scale#)
 GH=(250*#scale#)
 P=(50*#Scale#)
 
 Shuffle=0
-Control=1
+Control=0
 Repeat=0
 Heart=0
 Prog=0
-
-Align=Left
 ;==============================================================================================
 ;==============================================================================================
 ;==============================================================================================
@@ -26,7 +16,7 @@ Align=Left
 Measure=Plugin
 Plugin=Chameleon
 Type=File
-Path=[mCover]
+Path=[#PlayerType#Cover]
 Format=Dec
 UpdateDivider=1
 
@@ -84,21 +74,21 @@ Shape=Rectangle 0,0,(#GH#-#P#*2),(#GH#-#P#*2),(#R#/2),(#R#/2) | StrokeWidth 0
 
 [I]
 Meter=Image
-ImageName=[mCover]
+ImageName=[#PlayerType#Cover]
 W=(#GH#-#P#*2)
 H=(#GH#-#P#*2)
 PreserveAspectRatio=2
 Container=IC
 Hidden=#HideAlbum#
-LeftMouseDownAction=[!Setvariable Mouse.0Pos $MouseX$]
-LeftMouseUpAction=[!Setvariable Mouse.1Pos $MouseX$][!UpdateMeasure mAction]
 DynamicVariables=1
+Group=Music
 
 [SName]
 Meter=String
 MeterStyle=S
 X=(#HideAlbum# = 0 ? (220*#scale#) : #P#)
 Y=(#GH#/2-([SName:H]+[SArtist:H]+5*#scale#)/2)
+W=#GW#
 UpdateDivider=1
 ClipString=2
 FontWeight=600
@@ -106,7 +96,8 @@ Text=%1
 FontSize=(20*#scale#)
 FontColor=255,255,255
 DynamicVariables=1
-MeasureName=mTrack
+MeasureName=#PlayerType#Track
+Group=Music
 [SArtist]
 Meter=String
 MeterStyle=S
@@ -117,4 +108,5 @@ ClipString=1
 FontSize=(15*#scale#)
 FontFace=Nunito Sans SemiBold
 FontColor=255,255,255,150
-MeasureName=mArtist
+MeasureName=#PlayerType#Artist
+Group=Music

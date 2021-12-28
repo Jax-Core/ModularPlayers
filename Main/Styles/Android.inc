@@ -16,7 +16,7 @@ Prog=0
 Measure=Plugin
 Plugin=Chameleon
 Type=File
-Path=[mCover]
+Path=[#PlayerType#Cover]
 Format=Dec
 UpdateDivider=1
 
@@ -52,12 +52,13 @@ Shape=Rectangle 0,0,(#GH#-#P#*2),(#GH#-#P#*2),(#R#/2),(#R#/2) | StrokeWidth 0
 
 [I]
 Meter=Image
-ImageName=[mCover]
+ImageName=[#PlayerType#Cover]
 W=(#GH#-#P#*2)
 H=(#GH#-#P#*2)
 PreserveAspectRatio=2
 Container=IC
 DynamicVariables=1
+Group=Music
 
 [SName]
 Meter=String
@@ -78,8 +79,9 @@ InlineSetting2=Weight | 450
 InLinePattern3=#CRLF#(.*)
 InlineSetting3=Color | 255,255,255,150
 DynamicVariables=1
-MeasureName=mTrack
-MeasureName2=mArtist
+MeasureName=#PlayerType#Track
+MeasureName2=#PlayerType#Artist
+Group=Music
 
 [Previous]
 Meter=Image
@@ -92,8 +94,8 @@ Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
 ImageTint=[FGC2]
 DynamicVariables=1
-Group=DynamicColors
-LeftMouseUpAction=[!CommandMeasure mState "Previous"]
+Group=DynamicColors | Music
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
 
 
 [PlayPause]
@@ -110,10 +112,10 @@ DynamicVariables=1
 Group=DynamicColors
 [Play]
 ImageName=#@#Icons\Play.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 [Pause]
 ImageName=#@#Icons\Pause.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 
 [Next]
 Meter=Image
@@ -126,5 +128,5 @@ Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
 ImageTint=[FGC2]
 DynamicVariables=1
-Group=DynamicColors
-LeftMouseUpAction=[!CommandMeasure mState "Next"]
+Group=DynamicColors | Music
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]

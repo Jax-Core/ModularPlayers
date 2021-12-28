@@ -18,7 +18,7 @@ Prog=0
 Measure=Plugin
 Plugin=Chameleon
 Type=File
-Path=[mCover]
+Path=[#PlayerType#Cover]
 Format=Dec
 UpdateDivider=1
 
@@ -46,14 +46,12 @@ UpdateDivider=1
 [B]
 Meter=Shape
 Shape=Rectangle 0,0,#GW#,#GH#,#R#,#R# | StrokeWidth 0 | Fill Color #MainColor#
-LeftMouseDownAction=[!Setvariable Mouse.0Pos $MouseX$]
-LeftMouseUpAction=[!Setvariable Mouse.1Pos $MouseX$][!UpdateMeasure mAction]
 DynamicVariables=1
 
 [ImageProcess]
 Measure=Plugin
 Plugin=MagickMeter
-Image=File [mCover] | Blur #BlurRadius#,#BlurSigma# | Modulate #BlurModulate#
+Image=File [#PlayerType#Cover] | Blur #BlurRadius#,#BlurSigma# | Modulate #BlurModulate#
 DynamicVariables=1
 
 [CreateShadow]
@@ -86,12 +84,13 @@ Shape=Ellipse (#GH#/2),(#GH#/2),((#GH#-#P#*2)/2),((#GH#-#P#*2)/2) | StrokeWidth 
 
 [I]
 Meter=Image
-MeasureName=mCover
+MeasureName=#PlayerType#Cover
 X=#P#
 Y=#P#
 W=(#GH#-#P#*2)
 H=(#GH#-#P#*2)
 Container=IC
+DynamicVariables=1
 PreserveAspectRatio=2
 
 
@@ -113,6 +112,6 @@ InLinePattern2=#CRLF#.*
 InlineSetting2=Face | IBM Plex Sans Light
 DynamicVariables=1
 Group=DynamicColors
-MeasureName=mTrack
-MeasureName2=mArtist
+MeasureName=#PlayerType#Track
+MeasureName2=#PlayerType#Artist
 FontFace=IBM Plex Sans Semibold

@@ -17,7 +17,7 @@ Prog=1
 Measure=Plugin
 Plugin=Chameleon
 Type=File
-Path=[mCover]
+Path=[#PlayerType#Cover]
 Format=Dec
 UpdateDivider=1
 
@@ -93,13 +93,14 @@ DynamicVariables=1
 
 [I]
 Meter=Image
-ImageName=[mCover]
+ImageName=[#PlayerType#Cover]
 X=(#GW#-#GH#)
 W=#GH#
 H=#GH#
 PreserveAspectRatio=2
 Container=IC
 DynamicVariables=1
+Group=Music
 
 [SHead]
 Meter=String
@@ -109,11 +110,11 @@ Y=(#P#-5)
 W=(#GW#-#GH#)
 ClipString=2
 FontWeight=400
-Text=#NPName#
+Text=[#PlayerType#Player]
 FontSize=(8*#scale#)
 FontColor=[FGC2]60
 DynamicVariables=1
-Group=DynamicColors
+Group=DynamicColors | Music
 
 [SName]
 Meter=String
@@ -127,8 +128,8 @@ FontWeight=600
 FontSize=(15*#scale#)
 FontColor=[FGC2]
 DynamicVariables=1
-MeasureName=mTrack
-Group=DynamicColors
+MeasureName=#PlayerType#Track
+Group=DynamicColors | Music
 [SArtist]
 Meter=String
 MeterStyle=S
@@ -140,8 +141,8 @@ FontWeight=600
 FontSize=(8*#scale#)
 FontColor=[FGC1]
 DynamicVariables=1
-MeasureName=mArtist
-Group=DynamicColors
+MeasureName=#PlayerType#Artist
+Group=DynamicColors | Music
 
 [Heart]
 Meter=Image
@@ -156,10 +157,10 @@ DynamicVariables=1
 Group=DynamicColors
 [FullHeart]
 ImageName=#@#Icons\HeartFull.png
-LeftMouseUpAction=[!SetOption Heart MeterStyle EmptyHeart][!UpdateMeter Heart][!Redraw][!CommandMeasure mState "ToggleThumbsDown"]
+LeftMouseUpAction=[!SetOption Heart MeterStyle EmptyHeart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "ToggleThumbsDown"]
 [EmptyHeart]
 ImageName=#@#Icons\Heart.png
-LeftMouseUpAction=[!SetOption Heart MeterStyle Fullheart][!UpdateMeter Heart][!Redraw][!CommandMeasure mState "ToggleThumbsUp"]
+LeftMouseUpAction=[!SetOption Heart MeterStyle Fullheart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "ToggleThumbsUp"]
 
 
 [Previous]
@@ -174,7 +175,7 @@ Grayscale=1
 ImageTint=[FGC2]
 DynamicVariables=1
 Group=DynamicColors
-LeftMouseUpAction=[!CommandMeasure mState "Previous"]
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
 
 
 [PlayPause]
@@ -191,10 +192,10 @@ DynamicVariables=1
 Group=DynamicColors
 [Play]
 ImageName=#@#Icons\Play.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 [Pause]
 ImageName=#@#Icons\Pause.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 
 [Next]
 Meter=Image
@@ -208,22 +209,22 @@ Grayscale=1
 ImageTint=[FGC2]
 DynamicVariables=1
 Group=DynamicColors
-LeftMouseUpAction=[!CommandMeasure mState "Next"]
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]
 
 [ProgBar]
 Meter=Shape
 X=#P#
 Y=(#GH#*0.85)
 Shape=Line 0,0,(#GW#-#P#*2),0 | StrokeWidth 2 | Fill Color 0,0,0,1 | Stroke Color [FGC2]60 | StrokeStartCap Round | StrokeEndCap Round
-Shape2=Line 0,0,((#GW#-#P#*2)*[mProgress]/100),0 | StrokeWidth 2 | Fill Color 0,0,0,1 | Stroke Color [FGC2] | StrokeStartCap Round | StrokeEndCap Round
-Shape3=Ellipse ((#GW#-#P#*2)*[mProgress]/100),0,4,4 | strokeWidth 0 | Fill Color [FGC2] | Scale #Scale#,#Scale#
+Shape2=Line 0,0,((#GW#-#P#*2)*[#PlayerType#Progress]/100),0 | StrokeWidth 2 | Fill Color 0,0,0,1 | Stroke Color [FGC2] | StrokeStartCap Round | StrokeEndCap Round
+Shape3=Ellipse ((#GW#-#P#*2)*[#PlayerType#Progress]/100),0,4,4 | strokeWidth 0 | Fill Color [FGC2] | Scale #Scale#,#Scale#
 DynamicVariables=1
 UpdateDivider=1
 Group=DynamicColors
 LeftMouseUpAction=[!SetOption PosCalc Formula "($MouseX$/(#GW#-#P#*2)*100)"][!UpdateMeasure PosCalc]
 [PosCalc]
 Measure=calc
-OnUpdateAction=[!CommandMeasure mState "SetPosition [PosCalc]"]
+OnUpdateAction=[!CommandMeasure State#NowPlayingMedia# "SetPosition [PosCalc]"]
 Disabled=1
 DynamicVariables=1
 UpdateDivider=-1
@@ -237,9 +238,9 @@ Y=R
 FontColor=[FGC2]
 DynamicVariables=1
 FontSize=(8*#scale#)
-MeasureName=mCurrentPosition
+MeasureName=#PlayerType#CurrentPosition
 UpdateDivider=1
-Group=DynamicColors
+Group=DynamicColors | Music
 [MediaLength]
 Meter=String
 MeterStyle=S
@@ -249,5 +250,5 @@ FontColor=[FGC2]
 StringAlign=Right
 DynamicVariables=1
 FontSize=(8*#scale#)
-MeasureName=mLength
-Group=DynamicColors
+MeasureName=#PlayerType#Length
+Group=DynamicColors | Music

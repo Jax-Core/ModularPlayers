@@ -24,8 +24,9 @@ OnUpdateAction=[!DisableMouseAction Darken MouseLeaveAction][!EnableMouseAction 
 Measure=Plugin
 Plugin=Chameleon
 Type=File
-Path=[mCover]
+Path=[#PlayerType#Cover]
 Format=Dec
+DynamicVariables=1
 UpdateDivider=1
 
 [DC2]
@@ -72,8 +73,6 @@ DynamicVariables=1
 [B]
 Meter=Shape
 Shape=Ellipse (#GW#/2),(#GW#/2),(#GW#/2),(#GW#/2) | StrokeWidth 0 | Fill Color [DC2]
-LeftMouseDownAction=[!Setvariable Mouse.0Pos $MouseX$]
-LeftMouseUpAction=[!Setvariable Mouse.1Pos $MouseX$][!UpdateMeasure mAction]
 DynamicVariables=1
 
 [CreateShadow]
@@ -83,7 +82,7 @@ Image=Ellipse (#GH#/2),(#GH#/2),((#GH#-#P#*2)/2+1) | Innershadow 100,(10*#Scale#
 
 [RoundLine]
 Meter=RoundLine
-MeasureName=mProgressPer
+MeasureName=#PlayerType#ProgressPer
 X=0
 Y=0
 W=(#GW#)
@@ -103,7 +102,7 @@ Shape=Ellipse (#GH#/2),(#GH#/2),((#GH#-#P#*2)/2),((#GH#-#P#*2)/2) | StrokeWidth 
 
 [I]
 Meter=Image
-MeasureName=mCover
+MeasureName=#PlayerType#Cover
 X=#P#
 Y=#P#
 W=(#GH#-#P#*2)
@@ -111,6 +110,8 @@ H=(#GH#-#P#*2)
 Container=IC
 MOuseOverAction=[!DisableMouseAction I MouseOverAction][!EnableMouseAction Darken MouseLeaveAction][!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"]
 PreserveAspectRatio=2
+DynamicVariables=1
+Group=Music
 
 [IShadow]
 Meter=Image
@@ -119,9 +120,10 @@ MeasureName=CreateShadow
 [Darken]
 Meter=Shape
 Shape=Ellipse (#GH#/2),(#GH#/2),((#GH#-#P#*2)/2),((#GH#-#P#*2)/2) | StrokeWidth 0 | Fill Color 0,0,0,(#TweenNode#/100*150)
-Group=Tween
+Group=Tween | Music
 Hidden=1
 DynamicVariables=1
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 MouseLeaveAction=[!DisableMouseAction Darken MouseLeaveAction][!EnableMouseAction I MouseOverAction][!CommandMeasure ActionTimer "Stop 1"][!CommandMeasure ActionTimer "Execute 2"]
 
 [SName]
@@ -138,7 +140,7 @@ FontFace=IBM Plex Sans Semibold
 FontSize=(15*#scale#)
 FontColor=255,255,255,(#TweenNode#/100*255)
 DynamicVariables=1
-MeasureName=mTrack
+MeasureName=#PlayerType#Track
 Hidden=1
 Group=Tween
 [SArtist]
@@ -153,7 +155,7 @@ FontSize=(10*#scale#)
 StringAlign=Center
 FontFace=IBM Plex Sans Light
 FontColor=255,255,255,(#TweenNode#/100*150)
-MeasureName=mArtist
+MeasureName=#PlayerType#Artist
 Hidden=1
 Group=Tween
 
@@ -171,7 +173,7 @@ ImageTint=[LC1]
 ImageAlpha=(#TweenNode#/100*255)
 DynamicVariables=1
 Hidden=1
-LeftMouseUpAction=[!CommandMeasure mState "Previous"]
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
 
 
 [Next]
@@ -187,7 +189,7 @@ ImageTint=[LC1]
 ImageAlpha=(#TweenNode#/100*255)
 DynamicVariables=1
 Hidden=1
-LeftMouseUpAction=[!CommandMeasure mState "Next"]
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]
 
 [Repeat]
 Meter=Image
@@ -200,19 +202,19 @@ Group=DynamicColors | Tween
 ImageTint=[LC1]
 DynamicVariables=1
 Hidden=1
-LeftMouseUpAction=[!CommandMeasure mState "Repeat"]
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Repeat"]
 [Repeat0]
 ImageAlpha=(#TweenNode#/100*150)
 ImageName=#@#Icons\Repeat.png
-LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat1][!UpdateMeter Repeat][!Redraw][!CommandMeasure mState "Repeat"]
+LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat1][!UpdateMeter Repeat][!Redraw][!CommandMeasure State#NowPlayingMedia# "Repeat"]
 [Repeat1]
 ImageAlpha=(#TweenNode#/100*255)
 ImageName=#@#Icons\Repeat.png
-LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat2][!UpdateMeter Repeat][!Redraw][!CommandMeasure mState "Repeat"]
+LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat2][!UpdateMeter Repeat][!Redraw][!CommandMeasure State#NowPlayingMedia# "Repeat"]
 [Repeat2]
 ImageAlpha=(#TweenNode#/100*255)
 ImageName=#@#Icons\RepeatOne.png
-LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat0][!UpdateMeter Repeat][!Redraw][!CommandMeasure mState "Repeat"]
+LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat0][!UpdateMeter Repeat][!Redraw][!CommandMeasure State#NowPlayingMedia# "Repeat"]
 
 [Heart]
 Meter=Image
@@ -228,7 +230,7 @@ Hidden=1
 ImageAlpha=(#TweenNode#/100*255)
 [FullHeart]
 ImageName=#@#Icons\HeartFull.png
-LeftMouseUpAction=[!SetOption Heart MeterStyle EmptyHeart][!UpdateMeter Heart][!Redraw][!CommandMeasure mState "ToggleThumbsDown"]
+LeftMouseUpAction=[!SetOption Heart MeterStyle EmptyHeart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "ToggleThumbsDown"]
 [EmptyHeart]
 ImageName=#@#Icons\Heart.png
-LeftMouseUpAction=[!SetOption Heart MeterStyle Fullheart][!UpdateMeter Heart][!Redraw][!CommandMeasure mState "ToggleThumbsUp"]
+LeftMouseUpAction=[!SetOption Heart MeterStyle Fullheart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "ToggleThumbsUp"]

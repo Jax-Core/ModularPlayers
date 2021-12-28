@@ -17,7 +17,7 @@ Prog=0
 Measure=Plugin
 Plugin=Chameleon
 Type=File
-Path=[mCover]
+Path=[#PlayerType#Cover]
 Format=Dec
 UpdateDivider=1
 
@@ -67,11 +67,12 @@ Shape=Rectangle 0,0,(#GW#-#P#*2),(#GH#-#P#*2-40*#Scale#),(#R#/2),(#R#/2)  | Stro
 
 [I]
 Meter=Image
-MeasureName=mCover
+MeasureName=#PlayerType#Cover
 W=(#GW#-#P#*2)
 H=(#GH#-#P#*2-40*#Scale#)
 PreserveAspectRatio=2
 Container=IC
+DynamicVariables=1
 
 [FadeOut]
 Meter=Shape
@@ -101,8 +102,8 @@ InLinePattern2=-.*
 InlineSetting2=Weight | 450
 DynamicVariables=1
 Group=DynamicColors
-MeasureName=mTrack
-MeasureName2=mArtist
+MeasureName=#PlayerType#Track
+MeasureName2=#PlayerType#Artist
 
 [Shuffle]
 Meter=Image
@@ -113,13 +114,14 @@ W=(30*#Scale#)
 H=(30*#Scale#)
 Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
+DynamicVariables=1
 ImageTint=#OppositeColor#
 [Shuffle0]
 ImageAlpha=150
-LeftMouseUpAction=[!SetOption Shuffle MeterStyle Shuffle1][!UpdateMeter Shuffle][!Redraw][!CommandMeasure mState "Shuffle"]
+LeftMouseUpAction=[!SetOption Shuffle MeterStyle Shuffle1][!UpdateMeter Shuffle][!Redraw][!CommandMeasure State#NowPlayingMedia# "Shuffle"]
 [Shuffle1]
 ImageAlpha=255
-LeftMouseUpAction=[!SetOption Shuffle MeterStyle Shuffle0][!UpdateMeter Shuffle][!Redraw][!CommandMeasure mState "Shuffle"]
+LeftMouseUpAction=[!SetOption Shuffle MeterStyle Shuffle0][!UpdateMeter Shuffle][!Redraw][!CommandMeasure State#NowPlayingMedia# "Shuffle"]
 
 [Previous]
 Meter=Image
@@ -131,7 +133,8 @@ H=(30*#Scale#)
 Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
-LeftMouseUpAction=[!CommandMeasure mState "Previous"]
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
+DynamicVariables=1
 
 
 [PlayPause]
@@ -144,12 +147,13 @@ H=(30*#Scale#)
 Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
+DynamicVariables=1
 [Play]
 ImageName=#@#Icons\Play.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 [Pause]
 ImageName=#@#Icons\Pause.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 
 [Next]
 Meter=Image
@@ -161,7 +165,8 @@ H=(30*#Scale#)
 Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
-LeftMouseUpAction=[!CommandMeasure mState "Next"]
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]
+DynamicVariables=1
 
 [Repeat]
 Meter=Image
@@ -172,16 +177,17 @@ H=(30*#Scale#)
 Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
-LeftMouseUpAction=[!CommandMeasure mState "Repeat"]
+DynamicVariables=1
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Repeat"]
 [Repeat0]
 ImageAlpha=150
 ImageName=#@#Icons\Repeat.png
-LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat1][!UpdateMeter Repeat][!Redraw][!CommandMeasure mState "Repeat"]
+LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat1][!UpdateMeter Repeat][!Redraw][!CommandMeasure State#NowPlayingMedia# "Repeat"]
 [Repeat1]
 ImageAlpha=255
 ImageName=#@#Icons\Repeat.png
-LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat2][!UpdateMeter Repeat][!Redraw][!CommandMeasure mState "Repeat"]
+LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat2][!UpdateMeter Repeat][!Redraw][!CommandMeasure State#NowPlayingMedia# "Repeat"]
 [Repeat2]
 ImageAlpha=255
 ImageName=#@#Icons\RepeatOne.png
-LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat0][!UpdateMeter Repeat][!Redraw][!CommandMeasure mState "Repeat"]
+LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat0][!UpdateMeter Repeat][!Redraw][!CommandMeasure State#NowPlayingMedia# "Repeat"]

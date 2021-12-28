@@ -20,7 +20,7 @@ Prog=0
 Measure=Plugin
 Plugin=Chameleon
 Type=File
-Path=[mCover]
+Path=[#PlayerType#Cover]
 Format=Dec
 UpdateDivider=1
 
@@ -72,13 +72,14 @@ Shape=Ellipse (#GH#*(2/3)/2),(#GH#*(2/3)/2),(#GH#*(2/3)/2) | StrokeWidth 0 | Off
 
 [I]
 Meter=Image
-MeasureName=mCover
+MeasureName=#PlayerType#Cover
 X=#P#
 Y=#P#
 W=(#GH#*(2/3))
 H=(#GH#*(2/3))
 Container=IC
 PreserveAspectRatio=2
+DynamicVariables=1
 
 [IShadow2]
 Meter=Image
@@ -107,5 +108,5 @@ Text=%1
 FontSize=(12*#scale#)
 FontColor=#MainColor#
 DynamicVariables=1
-MeasureName=mTrack
+MeasureName=#PlayerType#Track
 FontFace=IBM Plex Sans Light

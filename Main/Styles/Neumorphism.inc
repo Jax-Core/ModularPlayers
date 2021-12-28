@@ -3,14 +3,6 @@ GW=(460*#scale#)
 GH=(90*#scale#)
 P=(25*#Scale#)
 
-Grad.1=18, 19, 21
-Grad.2=26, 28, 31
-Accent.1=193, 45, 13
-Accent.2=229, 85, 11
-Font.0=194, 194, 195
-
-
-
 Shuffle=0
 Control=1
 Repeat=0
@@ -31,8 +23,6 @@ Shape=Rectangle 4,4,#GW#,#GH#,#R#,#R# | StrokeWidth 4 | Fill LinearGradient This
 This=270 | #Grad.1# ; 0.0 | #Grad.2# ; 1.0
 That=90 | #Grad.1# ; 0.0 | #Grad.2# ; 1.0
 DynamicVariables=1
-LeftMouseDownAction=[!Setvariable Mouse.0Pos $MouseX$]
-LeftMouseUpAction=[!Setvariable Mouse.1Pos $MouseX$][!UpdateMeasure mAction]
 DynamicVariables=1
 
 [CreateShadow]
@@ -54,7 +44,8 @@ ClipString=1
 FontSize=(16*#scale#)
 FontFace=Nunito Sans SemiBold
 FontColor=#Font.0#
-MeasureName=mTrack
+MeasureName=#PlayerType#Track
+Group=Music
 [SArtist]
 Meter=String
 MeterStyle=S
@@ -66,7 +57,8 @@ ClipString=1
 FontSize=(14*#scale#)
 FontFace=Nunito Sans SemiBold
 FontColor=#Font.0#,150
-MeasureName=mArtist
+MeasureName=#PlayerType#Artist
+Group=Music
 
 
 
@@ -95,7 +87,7 @@ DynamicVariables=1
 Group=DynamicColors
 [Play]
 ImageName=#@#Icons\Play.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 [Pause]
 ImageName=#@#Icons\Pause.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]

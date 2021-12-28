@@ -3,10 +3,6 @@ GW=(470*#scale#)
 GH=(130*#scale#)
 P=(20*#Scale#)
 
-Accent.1=54, 232, 254
-Accent.2=45, 173, 255
-
-
 Shuffle=0
 Control=1
 Repeat=0
@@ -36,7 +32,8 @@ DynamicVariables=1
 ClipString=1
 FontSize=(20*#scale#)
 FontFace=Bebas Kai
-MeasureName=mTrack
+MeasureName=#PlayerType#Track
+Group=Music
 [SArtist]
 Meter=String
 MeterStyle=S
@@ -47,13 +44,14 @@ DynamicVariables=1
 ClipString=1
 FontWeight=600
 FontSize=(10*#scale#)
-MeasureName=mArtist
-MeasureName2=mCurrentPosition
-MeasureName3=mLength
+MeasureName=#PlayerType#Artist
+MeasureName2=#PlayerType#CurrentPosition
+MeasureName3=#PlayerType#Length
 Text=%1#CRLF#%2/%3
 InlinePattern=#CRLF#.*
 InlineSetting=Color | #OppositeColor#,200
 UpdateDivider=1
+Group=Music
 
 [PlayPauseBackground]
 Meter=Shape
@@ -75,8 +73,8 @@ H=(20*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
 DynamicVariables=1
-Group=DynamicColors
-LeftMouseUpAction=[!CommandMeasure mState "Previous"]
+Group=DynamicColors | Music
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
 
 
 [PlayPause]
@@ -92,10 +90,10 @@ DynamicVariables=1
 Group=DynamicColors
 [Play]
 ImageName=#@#Icons\Play.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 [Pause]
 ImageName=#@#Icons\Pause.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 
 [Next]
 Meter=Image
@@ -107,15 +105,15 @@ H=(20*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
 DynamicVariables=1
-Group=DynamicColors
-LeftMouseUpAction=[!CommandMeasure mState "Next"]
+Group=DynamicColors | Music
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]
 
 [ProgBar]
 Meter=Shape
 X=#P#
 Y=(#GH#-#P#)
 Shape=Line 0,0,(#GW#-#P#*2),0 | StrokeWidth 2 | Fill Color 0,0,0,1 | Stroke Color #OppositeColor#,50 | StrokeStartCap Round | StrokeEndCap Round
-Shape2=Line 0,0,((#GW#-#P#*2)*[mProgress]/100),0 | StrokeWidth 4 | Fill Color 0,0,0,1 | Stroke LinearGradient This | StrokeStartCap Round | StrokeEndCap Round
+Shape2=Line 0,0,((#GW#-#P#*2)*[#PlayerType#Progress]/100),0 | StrokeWidth 4 | Fill Color 0,0,0,1 | Stroke LinearGradient This | StrokeStartCap Round | StrokeEndCap Round
 This=0 | #Accent.1# ; 0.0 | #Accent.2# ; 1.0
 DynamicVariables=1
 UpdateDivider=1
@@ -123,7 +121,7 @@ Group=DynamicColors
 LeftMouseUpAction=[!SetOption PosCalc Formula "($MouseX$/(#GW#-#P#*2)*100)"][!UpdateMeasure PosCalc]
 [PosCalc]
 Measure=calc
-OnUpdateAction=[!CommandMeasure mState "SetPosition [PosCalc]"]
+OnUpdateAction=[!CommandMeasure State#NowPlayingMedia# "SetPosition [PosCalc]"]
 Disabled=1
 DynamicVariables=1
 UpdateDivider=-1

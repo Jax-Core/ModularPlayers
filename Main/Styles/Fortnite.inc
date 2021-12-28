@@ -49,12 +49,10 @@ Shape=Rectangle 0,0,#GW#,#GH# | StrokeWidth 0 | Fill LinearGradient This
 This=180 | #Grad.1# ; 0.0 | #Grad.2# ; 1.0
 Shape2=Rectangle 0,0,#GW#,#GH# | StrokeWidth 0 | Fill Color #Accent.2#,(255*#TweenNode#/100)
 Shape3=Rectangle 0,0,(7*#scale#),(#GH#) | StrokeWidth 0 | fill Color #Accent.0#,150
-Shape4=Rectangle 0,(#GH#),(7*#scale#),(-#GH#*[mProgressPer]) | StrokeWidth 0 | fill Color #Accent.0#
+Shape4=Rectangle 0,(#GH#),(7*#scale#),(-#GH#*[#PlayerType#Progress]/100) | StrokeWidth 0 | fill Color #Accent.0#
 Shape5=Path That | StrokeWidth 0 | Fill Color #Accent.1#,(255*#TweenNode#/100) | OffSet (80*#scale#-80*#scale#*#Tweennode#/100),0
 That=(#GW#-80*#scale#),0 | LineTo #GW#,0 | LineTo #GW#,#GH# | LineTo (#GW#-70*#Scale#),#GH# | ClosePath 1
 DynamicVariables=1
-LeftMouseDownAction=[!Setvariable Mouse.0Pos $MouseX$]
-LeftMouseUpAction=[!Setvariable Mouse.1Pos $MouseX$][!UpdateMeasure mAction]
 MouseOverAction=[!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"]
 MouseLeaveAction=[!CommandMeasure ActionTimer "Stop 1"][!CommandMeasure ActionTimer "Execute 2"]
 UpdateDivider=1
@@ -62,13 +60,14 @@ Group=Tween
 
 [I]
 Meter=Image
-MeasureName=mCover
+MeasureName=#PlayerType#Cover
 X=((7)*#scale#)
 Y=0
 W=(#GH#)
 H=(#GH#)
 PreserveAspectRatio=2
 DynamicVariables=1
+Group=Music
 
 [SName]
 Meter=String
@@ -82,8 +81,8 @@ FontSize=(16*#scale#)
 FontColor=#Font.0#
 FontWeight=600
 FontFace=Roboto Bold
-MeasureName=mTrack
-Group=Tween
+MeasureName=#PlayerType#Track
+Group=Tween | Music
 UpdateDivider=1
 [SArtist]
 Meter=String
@@ -96,7 +95,8 @@ ClipString=1
 FontSize=(12*#scale#)
 FontColor=#Font.0#,150
 FontFace=Roboto
-MeasureName=mArtist
+Group=Music
+MeasureName=#PlayerType#Artist
 
 [PlayPause]
 Meter=Image
@@ -108,10 +108,10 @@ H=(30*#scale#)
 Grayscale=1
 DynamicVariables=1
 ImageAlpha=(255*#tWEENnODE#/100)
-Group=Tween
+Group=Tween | Music
 [Play]
 ImageName=#@#Icons\Play.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
 [Pause]
 ImageName=#@#Icons\Pause.png
-LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure mState "PlayPause"]
+LeftMouseUpAction=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]

@@ -1,2 +1,2 @@
 [Variables]
-Version=2.0
+Scale=1

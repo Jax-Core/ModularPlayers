@@ -21,6 +21,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Scale]
 Meter=Shape
 MeterStyle=Set.Textbox:S
+Type=Num|0.5|2
 Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value01]
 Meter=String
@@ -35,3 +36,13 @@ Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Meter=Shape
 MeterStyle=Set.Color:S
 Y=([Option12:Y]-#Set.P#+(-30/2+8)*[Set.S])
+; ---------------------------------------------------------------------------- ;
+;                                    Anchor                                    ;
+; ---------------------------------------------------------------------------- ;
+
+
+[AnchorSuppli]
+Meter=String
+Container=ContentContainer
+x=r
+Y=R

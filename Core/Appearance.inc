@@ -1,6 +1,7 @@
 [Variables]
 Sec.SaveLocation=#SKINSPATH##SKin.Name#\Main\Vars\#Style#.inc
 Sec.SaveLocation2=#SKINSPATH##SKin.Name#\@Resources\Vars.inc
+Sec.AnchorName=AnchorSuppli
 @includePlayerVars=#SKINSPATH##SKin.Name#\Main\Vars\#Style#.inc
 
 
@@ -52,6 +53,11 @@ Meter=Shape
 MeterStyle=Box
 [Box10]
 Meter=Shape
+MeterStyle=Box
+[Box11]
+Meter=Shape
+X=(20*[Set.S])
+Y=(20*[Set.S])R
 MeterStyle=Box
 
 
@@ -143,12 +149,18 @@ X=([Box1:W]+20*[Set.S])r
 Y=r
 MeterStyle=MIUI
 
+[Modern]
+Meter=Image
+X=([Box11:X])
+Y=([Box11:Y])
+MeterStyle=MIUI
+
 ;================================================================================================================================================================================
 
 [Options]
 Meter=String
 X=(30*[Set.S])
-Y=([Box6:YH])
+Y=([Box11:YH])
 DynamicVariables=1
 FontSize=(14*[Set.S])
 FontWeight=500

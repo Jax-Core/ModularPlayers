@@ -1,7 +1,8 @@
 [Variables]
 R=(20*#scale#)
 
-Style=Center
+Style=Modern
+
+MediaType=Auto
 
 AutoHide=0
-

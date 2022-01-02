@@ -29,8 +29,8 @@ DynamicVariables=1
 Measure=Plugin
 Plugin=MagickMeter
 DynamicVariables=1
-Image2=Ellipse ([PlayPause:X]+8*#Scale#),([PlayPause:Y]+8*#Scale#),(20*#scale#) | Shadow 25,(5*#Scale#),4,4,1 ; 0,0,0
-Image=Ellipse ([PlayPause:X]+8*#Scale#),([PlayPause:Y]+8*#Scale#),(20*#scale#) | Shadow 25,(5*#Scale#),-4,-4,1 ; 255,255,255
+Image2=Ellipse ([PlayPause:X]+18*#Scale#),([PlayPause:Y]+18*#Scale#),(20*#scale#) | Shadow 25,(5*#Scale#),4,4,1 ; 0,0,0
+Image=Ellipse ([PlayPause:X]+18*#Scale#),([PlayPause:Y]+18*#Scale#),(20*#scale#) | Shadow 25,(5*#Scale#),-4,-4,1 ; 255,255,255
 
 [SName]
 Meter=String
@@ -68,8 +68,8 @@ MeasureName=CreateShadow
 
 [PlayPauseBackground]
 Meter=Shape
-X=([PlayPause:X]+8*#Scale#)
-Y=([PlayPause:Y]+8*#Scale#)
+X=([PlayPause:X]+18*#Scale#)
+Y=([PlayPause:Y]+18*#Scale#)
 DynamicVariables=1
 Shape=Ellipse 0,0,20 | StrokeWidth 2 | Fill LinearGradient This | Scale #Scale#,#Scale# | Stroke Color #Accent.2#
 This=225 | #Accent.1# ; 0.0 | #Accent.2# ; 1.0
@@ -77,10 +77,11 @@ This=225 | #Accent.1# ; 0.0 | #Accent.2# ; 1.0
 [PlayPause]
 Meter=Image
 MeterStyle=
-X=(#GW#-#P#-20*#scale#+4)
-Y=(#GH#/2-8*#scale#+4)
+X=(#GW#-#P#-38*#scale#+4)
+Y=(#GH#/2-18*#scale#+4)
 W=(16*#scale#)
 H=(16*#scale#)
+Padding=(10*#scale#),(10*#scale#),(10*#scale#),(10*#scale#)
 Grayscale=1
 ImageTint=#Font.0#
 DynamicVariables=1

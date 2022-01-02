@@ -19,7 +19,7 @@ Meter=Shape
 X=(#GW#/2-#GH#/2)
 Y=0
 Shape=Rectangle 0,0,(#GH#),(#GH#),(#R#/2),(#R#/2) | StrokeWidth 0 | Fill RadialGradient This
-This=0,0,0,0,(#GH#/2),(#GH#/2) | 0,0,0 ; 0.0 | 0,0,0,1 ; 0.5
+This=0,0,0,0,(#GH#/2),(#GH#/2) | 0,0,0 ; 0.0 | 0,0,0,0 ; 0.5
 Hidden=#HideAlbum#
 
 [I]
@@ -55,7 +55,9 @@ Meter=Shape
 X=r
 Y=(#GH#/2)
 Shape=Line (-#GW#/2+#P#),0,(#GW#/2-#P#),0 | StrokeWidth 2 | StrokeStartCap Triangle | StrokeEndCap Triangle | Stroke Color 255,255,255,50
-Shape2=Line (-#GW#/2+#P#),0,((#GW#/2-#P#)*[#PlayerType#Progress]/100),0 | StrokeWidth 2 | StrokeStartCap Triangle | StrokeEndCap Triangle | Stroke Color 255,255,255,255
+Shape2=Line (-#GW#/2+#P#),0,(-#GW#/2+#P#+(#GW#-#P#*2)*[#PlayerType#Progress]/100),0 | StrokeWidth 2 | StrokeStartCap Triangle | StrokeEndCap Triangle | Stroke Color 255,255,255,255
+DynamicVariables=1
+UpdateDivider=1
 [SArtist]
 Meter=String
 MeterStyle=S

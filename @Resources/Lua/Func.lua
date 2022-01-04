@@ -1,4 +1,5 @@
 mediaPlayers = {'AIMP', 'CAD', 'WMP', 'iTunes', 'Winamp', 'WebNowPlaying'}
+-- mediaPlayers = {'CAD', 'WebNowPlaying'}
 
 function checkMediaAuto()
     currentPlayer = nil
@@ -26,7 +27,7 @@ function checkMediaAuto()
     if checkingPlayerState ~= 0 then
         if checkingPlayer == 'WebNowPlaying' then
             SKIN:Bang('[!EnableMeasureGroup WNP][!DisableMeasureGroup NP]')
-            SKIN:Bang('[!SetVariable PlayerType WNP][!UpdateMeterGroup Music]')
+            SKIN:Bang('[!SetVariable PlayerType WNP]')
 
             if SKIN:GetVariable('Shuffle') == 0 then
                 SKIN:Bang('[!DisableMeasure wnpShuffle]')
@@ -45,7 +46,7 @@ function checkMediaAuto()
             end
         else 
             SKIN:Bang('[!EnableMeasureGroup NP][!DisableMeasureGroup WNP]')
-            SKIN:Bang('[!SetVariable PlayerType NP][!UpdateMeterGroup Music]')
+            SKIN:Bang('[!SetVariable PlayerType NP]')
 
             if SKIN:GetVariable('Shuffle') == 0 then
                 SKIN:Bang('[!DisableMeasure npShuffle]')
@@ -65,12 +66,11 @@ function checkMediaAuto()
         end
     else
         SKIN:Bang('[!DisableMeasureGroup NP][!DisableMeasureGroup WNP]')
-        SKIN:Bang('[!UpdateMeterGroup Music]')
     end
         
     
     SKIN:Bang('[!SetVariable NowPlayingMedia '..checkingPlayer..']')
-    SKIN:Bang('[!UpdateMeasureGroup Music]')
+    SKIN:Bang('[!UpdateMeasureGroup Music][!UpdateMeterGroup Music]')
 
     if tonumber(SKIN:GetVariable('Control')) == 1 then
         if checkingPlayerState == 1 then SKIN:Bang('[!SetOption PlayPause MeterStyle "Pause"][!UpdateMeter PlayPause]')

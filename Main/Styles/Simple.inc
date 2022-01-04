@@ -73,7 +73,6 @@ H=(20*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
 DynamicVariables=1
-Group=DynamicColors | Music
 LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
 
 
@@ -87,7 +86,6 @@ H=(20*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
 DynamicVariables=1
-Group=DynamicColors
 [Play]
 ImageName=#@#Icons\Play.png
 LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
@@ -105,7 +103,6 @@ H=(20*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
 DynamicVariables=1
-Group=DynamicColors | Music
 LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]
 
 [ProgBar]
@@ -117,7 +114,7 @@ Shape2=Line 0,0,((#GW#-#P#*2)*[#PlayerType#Progress]/100),0 | StrokeWidth 4 | Fi
 This=0 | #Accent.1# ; 0.0 | #Accent.2# ; 1.0
 DynamicVariables=1
 UpdateDivider=1
-Group=DynamicColors
+Group=Music
 LeftMouseUpAction=[!SetOption PosCalc Formula "($MouseX$/(#GW#-#P#*2)*100)"][!UpdateMeasure PosCalc]
 [PosCalc]
 Measure=calc

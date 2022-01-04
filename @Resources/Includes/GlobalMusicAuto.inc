@@ -1,6 +1,6 @@
-; ---------------------------------------------------------------------------- ;
-;                                      Gru                                     ;
-; ---------------------------------------------------------------------------- ;
+; ; ---------------------------------------------------------------------------- ;
+; ;                                      Gru                                     ;
+; ; ---------------------------------------------------------------------------- ;
 
 [stateAIMP]
 Measure=NowPlaying
@@ -56,11 +56,11 @@ DynamicVariables=1
 UpdateDivider=1
 Group=MusicGru
 
-; ---------------------------------------------------------------------------- ;
-;                                    Minions                                   ;
-; ---------------------------------------------------------------------------- ;
+; ; ---------------------------------------------------------------------------- ;
+; ;                                    Minions                                   ;
+; ; ---------------------------------------------------------------------------- ;
 
-; ------------------------------------ NP ------------------------------------ ;
+; ; ------------------------------------ NP ------------------------------------ ;
 
 [npPlayer]
 Measure=String
@@ -72,7 +72,7 @@ Disabled=1
 
 [npCover]
 Measure=NowPlaying
-PlayerName=#NowPlayingMedia#
+PlayerName=[state#NowPlayingMedia#]
 PlayerType=Cover
 Substitute="":"#@#Images\Default.png"
 UpdateDivider=1
@@ -82,7 +82,7 @@ Disabled=1
 
 [npArtist]
 Measure=NowPlaying
-PlayerName=#NowPlayingMedia#
+PlayerName=[state#NowPlayingMedia#]
 PlayerType=Artist
 UpdateDivider=1
 Group=Music | NP
@@ -91,7 +91,7 @@ Disabled=1
 
 [npTrack]
 Measure=NowPlaying
-PlayerName=#NowPlayingMedia#
+PlayerName=[state#NowPlayingMedia#]
 PlayerType=Title
 OnChangeAction=[!UpdateMeterGroup Music][!Redraw]
 UpdateDivider=1
@@ -101,7 +101,7 @@ Disabled=1
 
 [npProgress]
 Measure=NowPlaying
-PlayerName=#NowPlayingMedia#
+PlayerName=[state#NowPlayingMedia#]
 PlayerType=Progress
 Substitute="NaN":"1"
 UpdateDivider=1
@@ -111,7 +111,7 @@ Disabled=1
 
 [npCurrentPosition]
 Measure=NowPlaying
-PlayerName=#NowPlayingMedia#
+PlayerName=[state#NowPlayingMedia#]
 PlayerType=Position
 UpdateDivider=1
 Group=Music | NP
@@ -120,7 +120,7 @@ Disabled=1
 
 [npLength]
 Measure=NowPlaying
-PlayerName=#NowPlayingMedia#
+PlayerName=[state#NowPlayingMedia#]
 PlayerType=Duration
 UpdateDivider=1
 Group=Music | NP
@@ -129,7 +129,7 @@ Disabled=1
 
 [npRepeat]
 Measure=NowPlaying
-PlayerName=#NowPlayingMedia#
+PlayerName=[state#NowPlayingMedia#]
 PlayerType=Repeat
 IfCondition=npRepeat = 1
 IfTrueAction=[!SetOption Repeat MeterStyle Repeat1][!UpdateMeter Repeat][!Redraw]
@@ -143,7 +143,7 @@ Disabled=1
 
 [npShuffle]
 Measure=NowPlaying
-PlayerName=#NowPlayingMedia#
+PlayerName=[state#NowPlayingMedia#]
 PlayerType=Shuffle
 IfCondition=npShuffle = 0
 IfTrueAction=[!SetOption Shuffle MeterStyle "Shuffle0"][!UpdateMeter Shuffle][!Redraw]
@@ -155,7 +155,7 @@ Disabled=1
 
 [npHeart]
 Measure=NowPlaying
-PlayerName=#NowPlayingMedia#
+PlayerName=[state#NowPlayingMedia#]
 PlayerType=Rating
 IfCondition=npHeart = 0
 IfTrueAction=[!SetOption Heart MeterStyle "EmptyHeart"][!UpdateMeter Heart][!Redraw]

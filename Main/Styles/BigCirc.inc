@@ -5,7 +5,7 @@ P=(10*#Scale#)
 LumHnld=0
 ShadowColor=0
 TweenNode=0
-TweenStep=50
+TweenStep=25
 
 Shuffle=0
 Control=0
@@ -61,8 +61,8 @@ UpdateDivider=1
 [ActionTimer]
 Measure=Plugin
 Plugin=ActionTimer
-ActionList1=ShowMeters | Repeat Show,8,100
-ActionList2=Repeat Hide,8,#TweenStep# | HideMeters
+ActionList1=ShowMeters | Repeat Show,4,#TweenStep#
+ActionList2=Repeat Hide,4,#TweenStep# | HideMeters
 Show=[!SetVariable TweenNode "(Clamp(#TweenNode#+(100/#TweenStep#),0,100))"][!UpdateMeterGroup Tween][!UpdateMeasure ActionTimer][!Redraw]
 ShowMeters=[!ShowMeterGroup Tween]
 Hide=[!SetVariable TweenNode "(Clamp(#TweenNode#-(100/#TweenStep#),0,100))"][!UpdateMeterGroup Tween][!UpdateMeasure ActionTimer][!Redraw]
@@ -82,7 +82,7 @@ Image=Ellipse (#GH#/2),(#GH#/2),((#GH#-#P#*2)/2+1) | Innershadow 100,(10*#Scale#
 
 [RoundLine]
 Meter=RoundLine
-MeasureName=#PlayerType#ProgressPer
+MeasureName=#PlayerType#Progress
 X=0
 Y=0
 W=(#GW#)

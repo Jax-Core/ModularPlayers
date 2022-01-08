@@ -68,12 +68,6 @@ H=#GH#
 PreserveAspectRatio=2
 MeasureName=ImageProcess
 
-[FadeOut]
-Meter=Shape
-Shape=Rectangle 0,0,#GW#,#GH#,#R#,#R# | StrokeWidth 0 | Fill LinearGradient This
-This=270 | 0,0,0,0 ; 0.0 | [AC] ; 1.0
-DynamicVariables=1
-
 [IShadow]
 Meter=Image
 MeasureName=CreateShadow
@@ -110,6 +104,7 @@ InLinePattern=#CRLF#.*
 InlineSetting=Size | (12*#scale#)
 InLinePattern2=#CRLF#.*
 InlineSetting2=Face | IBM Plex Sans Light
+InlineSetting3=Shadow | 0 | 0 | 2 | ([Lum] > #LumHnld# ? 0 : 255),([Lum] > #LumHnld# ? 0 : 255),([Lum] > #LumHnld# ? 0 : 255),150
 DynamicVariables=1
 Group=DynamicColors
 MeasureName=#PlayerType#Track

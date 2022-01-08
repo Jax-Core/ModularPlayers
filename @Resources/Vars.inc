@@ -1,7 +1,7 @@
 [Variables]
 R=(20*#scale#)
 
-Style=Modern
+Style=Side
 
 MediaType=Auto
 

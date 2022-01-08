@@ -28,10 +28,15 @@ Meter=String
 Text=#Scale#
 MeterStyle=Set.String:S | Set.Value:S
 
-[MainColor]
+[Main]
 Meter=Shape
-MeterStyle=Set.Color:S
+MeterStyle=Set.ColorPacity:S
 Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Type=Num|1|255
+[Value11]
+Meter=String
+Text=#MainOpacity#
+MeterStyle=Set.String:S | Set.Pacity:S
 [OppositeColor]
 Meter=Shape
 MeterStyle=Set.Color:S

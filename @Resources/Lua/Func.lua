@@ -87,11 +87,11 @@ function checkMediaAuto()
         end
     end
 
-    if checkingPlayerState == 0 then
-        SKIN:Bang('[!HideMeterGroup Music][!UpdateMeterGroup Music]')
-    else
-        SKIN:Bang('[!ShowMeterGroup Music][!UpdateMeterGroup Music]')
-    end
+    -- if checkingPlayerState == 0 then
+    --     SKIN:Bang('[!HideMeterGroup Music][!UpdateMeterGroup Music]')
+    -- else
+    --     SKIN:Bang('[!ShowMeterGroup Music][!UpdateMeterGroup Music]')
+    -- end
     
     SKIN:Bang('[!Redraw]')
 end
@@ -134,11 +134,23 @@ function checkMediaModern()
         end
     end
 
-    if checkingPlayerState == 0 then
-        SKIN:Bang('[!HideMeterGroup Music][!UpdateMeterGroup Music]')
-    else
-        SKIN:Bang('[!ShowMeterGroup Music][!UpdateMeterGroup Music]')
-    end
+    -- if checkingPlayerState == 0 then
+    --     SKIN:Bang('[!HideMeterGroup Music][!UpdateMeterGroup Music]')
+    -- else
+    --     SKIN:Bang('[!ShowMeterGroup Music][!UpdateMeterGroup Music]')
+    -- end
     
     SKIN:Bang('[!Redraw]')
+end
+
+
+function returnCorner()
+    local BlurCorner = SKIN:GetVariable('BlurCorner')
+    if BlurCorner == 'Round' then
+        return 8
+    elseif BlurCorner == 'RoundSmall' then
+        return 4
+    else
+        return 0
+    end
 end

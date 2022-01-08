@@ -1,0 +1,2 @@
+[Variables]
+Scale=1

@@ -1,5 +1,17 @@
+[Rainmeter]
+OnRefreshAction=
+
+[MeasureOnLoad]
+Measure=Calc
+Formula=Counter
+IfEqualValue=1
+IfEqualAction=[!Delay 100][!enablemeasuregroup NUOL][!CommandMeasure Func "checkMedia#MediaType#()"]
+IfAboveValue=1
+IfAboveAction=[!Delay 10][!DeactivateConfig][!ActivateConfig "ModularPlayers\Main"]
+UpdateDivider=-1
+
 [Variables]
-GW=(200*#scale#)
+GW=(500*#scale#)
 GH=(250*#scale#)
 P=(50*#Scale#)
 
@@ -18,16 +30,24 @@ Plugin=Chameleon
 Type=File
 Path=[#PlayerType#Cover]
 Format=Dec
-UpdateDivider=1
+UpdateDivider=-1
+Group=Music
 
 [AC]
 Measure=Plugin
 Plugin=Chameleon
 Parent=MainC
 Color=Average
-UpdateDivider=1
+UpdateDivider=-1
+Group=Music
 OnChangeAction=[!UpdateMeter B]
 
+[SliderScript]
+Measure=Script
+ScriptFile=#@#Lua\Slider.lua
+UpdateDivider=(#AutoScroll# = 1 ? 1 : -1)
+Disabled=(1-#AutoScroll#)
+Group=Music
 
 ;==============================================================================================
 ;==============================================================================================
@@ -35,24 +55,27 @@ OnChangeAction=[!UpdateMeter B]
 
 [B]
 Meter=Shape
-MeterStyle=B#SideGlow##HideAlbum#
+MeterStyle=B#SideGlow##HideAlbum# | BScroll#AutoScroll#
 DynamicVariables=1
 
+[BScroll0]
+MouseOverAction=[!EnableMeasure SliderScript][!CommandMeasure SliderScript "Animate()"]
+MouseLeaveAction=[!DisableMeasure SliderScript][!CommandMeasure SliderScript "Reset()"]
 [B10]
-Shape=Rectangle 0,0,#GW#,#GH# | StrokeWidth 0 | Fill RadialGradient this
+Shape=Rectangle 0,0,(200*#scale#),#GH# | StrokeWidth 0 | Fill RadialGradient this
 Shape2=
-This=(-#GW#/2),0,0,0,(#GH#/2),(#GH#/2) | [AC] ; 0.2 | 0,0,0,1 ; 1.0
+This=(-(200*#scale#)/2),0,0,0,(#GH#/2),(#GH#/2) | [AC] ; 0.2 | 0,0,0,1 ; 1.0
 [B00]
-Shape=Rectangle 0,0,#GW#,#GH# | StrokeWidth 0 | Fill Color 0,0,0,1
+Shape=Rectangle 0,0,(200*#scale#),#GH# | StrokeWidth 0 | Fill Color 0,0,0,1
 Shape2=
 [B11]
-Shape=Rectangle 0,0,#GW#,#GH# | StrokeWidth 0 | Fill RadialGradient this
-This=(-#GW#/2),0,0,0,(#GH#/2),(#GH#/2) | [AC] ; 0.2 | 0,0,0,1 ; 1.0
-Shape2=Rectangle (20*#scale#),#P#,(10*#Scale#),(#GH#-#P#*2) | StrokeWidth 0 | Fill Color 255,255,255
+Shape=Rectangle 0,0,(200*#scale#),#GH# | StrokeWidth 0 | Fill RadialGradient this
+This=(-(200*#scale#)/2),0,0,0,(#GH#/2),(#GH#/2) | [AC] ; 0.2 | 0,0,0,1 ; 1.0
+Shape2=Rectangle (20*#scale#),#P#,(#BarW#*#Scale#),(#GH#-#P#*2),(#BarCorner#*#scale#) | StrokeWidth 0 | Fill Color 255,255,255
 [B01]
-Shape=Rectangle 0,0,#GW#,#GH# | StrokeWidth 0 | Fill Color 0,0,0,1
-This=(-#GW#/2),0,0,0,(#GH#/2),(#GH#/2) | [AC] ; 0.2 | 0,0,0,1 ; 1.0
-Shape2=Rectangle (20*#scale#),#P#,(10*#Scale#),(#GH#-#P#*2) | StrokeWidth 0 | Fill Color 255,255,255
+Shape=Rectangle 0,0,(200*#scale#),#GH# | StrokeWidth 0 | Fill Color 0,0,0,1
+This=(-(200*#scale#)/2),0,0,0,(#GH#/2),(#GH#/2) | [AC] ; 0.2 | 0,0,0,1 ; 1.0
+Shape2=Rectangle (20*#scale#),#P#,(#BarW#*#Scale#),(#GH#-#P#*2),(#BarCorner#*#scale#) | StrokeWidth 0 | Fill Color 255,255,255
 
 
 [CreateShadow]
@@ -83,26 +106,36 @@ Hidden=#HideAlbum#
 DynamicVariables=1
 Group=Music
 
-[SName]
+[SMetaDataSection]
+Meter=Shape
+X=(#HideAlbum# = 0 ? (200*#scale#) : #P#)
+Y=(#GH#/2-(68*#scale#)/2)
+Shape=Rectangle 0,0,((#GW#)-120*#scale#),(#GH#-2*#P#) | StrokeWidth 0 | Fill LinearGradient This
+This=180 | 0,0,0 ; 0.7 | 0,0,0,0 ; 1
+DynamicVariables=1
+Group=Music
+[SName1]
 Meter=String
 MeterStyle=S
-X=(#HideAlbum# = 0 ? (220*#scale#) : #P#)
-Y=(#GH#/2-([SName:H]+[SArtist:H]+5*#scale#)/2)
-W=#GW#
 UpdateDivider=1
 ClipString=2
 FontWeight=600
-Text=%1
 FontSize=(20*#scale#)
 FontColor=255,255,255
 DynamicVariables=1
 MeasureName=#PlayerType#Track
 Group=Music
-[SArtist]
+Container=SMetaDataSection
+[SName2]
+Meter=String
+MeterStyle=S | SName1
+X=R
+Text="  -  %1"
+Hidden=([SName1:W]>380*#Scale#?0:1)
+[SArtist1]
 Meter=String
 MeterStyle=S
-X=r
-Y=(5*#scale#)R
+Y=(41*#scale#)
 DynamicVariables=1
 ClipString=1
 FontSize=(15*#scale#)
@@ -110,3 +143,18 @@ FontFace=Nunito Sans SemiBold
 FontColor=255,255,255,150
 MeasureName=#PlayerType#Artist
 Group=Music
+Container=SMetaDataSection
+[SArtist2]
+Meter=String
+MeterStyle=S | SArtist1
+X=R
+Y=r
+Text="  -  %1"
+Hidden=([SArtist1:W]>380*#Scale#?0:1)
+
+[Heart]
+Meter=String
+[Shuffle]
+Meter=String
+[Repeat]
+Meter=String

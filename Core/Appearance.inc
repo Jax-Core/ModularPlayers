@@ -54,14 +54,14 @@ MeterStyle=Box
 [Box10]
 Meter=Shape
 MeterStyle=Box
-[Box11]
-Meter=Shape
-X=(20*[Set.S])
-Y=(20*[Set.S])R
-MeterStyle=Box
+; [Box11]
+; Meter=Shape
+; X=(20*[Set.S])
+; Y=(20*[Set.S])R
+; MeterStyle=Box
 
 
-[MIUI]
+[Side]
 Meter=Image
 Imagename=#SKINSPATH#ModularPlayers\@Resources\Images\Preview\#CURRENTSECTION#.png
 X=([Box1:X])
@@ -72,11 +72,11 @@ Solidcolor=0,0,0,1
 Leftmouseupaction=[!WriteKeyValue Variables Style #CURRENTSECTION# "#Sec.SaveLocation2#"][!Refresh][!UpdateMeasure Auto_Refresh:M]
 DynamicVariables=1
 
-[Card]
+[Blur]
 Meter=Image
 X=([Box1:W]+20*[Set.S])r
 Y=r
-MeterStyle=MIUI
+MeterStyle=Side
 
 [MMI1]
 Meter=Image
@@ -89,78 +89,74 @@ Padding=10,10,10,10
 DynamicVariables=1
 LeftMouseUpAction=[!ActivateConfig "#Skin.Name#\@Start"]
 
-[Side]
+[Simple]
 Meter=Image
 X=([Box1:W]+20*[Set.S])r
 Y=r
-MeterStyle=MIUI
+MeterStyle=Side
 
-[Neumorphism]
+[Card]
 Meter=Image
 X=([Box1:W]+20*[Set.S])r
 Y=r
-MeterStyle=MIUI
+MeterStyle=Side
 
 [MMI2]
 Meter=Image
 MeterStyle=MMI1
 
-[Simple]
+[Modern]
 Meter=Image
 X=([Box1:W]+20*[Set.S])r
 Y=r
-MeterStyle=MIUI
+MeterStyle=Side
 
-[Fortnite]
+[Neumorphism]
 Meter=Image
 X=([Box6:X])
 Y=([Box6:Y])
-MeterStyle=MIUI
-
-[Android]
-Meter=Image
-X=([Box1:W]+20*[Set.S])r
-Y=r
-MeterStyle=MIUI
-
-[Blur]
-Meter=Image
-X=([Box1:W]+20*[Set.S])r
-Y=r
-MeterStyle=MIUI
-
-[MMI8]
-Meter=Image
-MeterStyle=MMI1
-
-[BigCirc]
-Meter=Image
-X=([Box1:W]+20*[Set.S])r
-Y=r
-MeterStyle=MIUI
-
-[MMI9]
-Meter=Image
-MeterStyle=MMI1
+MeterStyle=Side
 
 [Center]
 Meter=Image
 X=([Box1:W]+20*[Set.S])r
 Y=r
-MeterStyle=MIUI
+MeterStyle=Side
 
-[Modern]
+[BigCirc]
 Meter=Image
-X=([Box11:X])
-Y=([Box11:Y])
-MeterStyle=MIUI
+X=([Box1:W]+20*[Set.S])r
+Y=r
+MeterStyle=Side
+
+[MMI8]
+Meter=Image
+MeterStyle=MMI1
+
+[MIUI]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
+Y=r
+MeterStyle=Side
+
+[Win11]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
+Y=r
+MeterStyle=Side
+
+; [Fortnite]
+; Meter=Image
+; X=([Box11:X])
+; Y=([Box11:Y])
+; MeterStyle=Side
 
 ;================================================================================================================================================================================
 
 [Options]
 Meter=String
 X=(30*[Set.S])
-Y=([Box11:YH])
+Y=([Box10:YH])
 DynamicVariables=1
 FontSize=(14*[Set.S])
 FontWeight=500

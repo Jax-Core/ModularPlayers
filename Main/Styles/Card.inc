@@ -44,7 +44,7 @@ UpdateDivider=1
 
 [B]
 Meter=Shape
-Shape=Rectangle 0,0,#GW#,#GH#,#R#,#R# | StrokeWidth 0 | Fill Color #MainColor#
+Shape=Rectangle 0,0,#GW#,#GH#,#R#,#R# | StrokeWidth 0 | Fill Color #MainColor#,#MainOpacity#
 DynamicVariables=1
 
 [ImageProcess]

@@ -1,10 +1,9 @@
 @Resources\Vars.inc
-Main\Vars\Android.inc
+Main\Vars\Win11.inc
 Main\Vars\BigCirc.inc
 Main\Vars\Blur.inc
 Main\Vars\Card.inc
 Main\Vars\Center.inc
-Main\Vars\DoubleCirc.inc
 Main\Vars\Fortnite.inc
 Main\Vars\MIUI.inc
 Main\Vars\Modern.inc

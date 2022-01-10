@@ -1,7 +1,7 @@
 [Variables]
 R=(20*#scale#)
 
-Style=Side
+Style=Win11
 
 MediaType=Auto
 

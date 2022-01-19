@@ -36,7 +36,7 @@
         <li><a href="#setting-up">Styles Setup</a>
           <ul>
            <li><a href="#installing-imagemagick">Installing ImageMagick</a></li>
-        <li><a href="#installing-spicetify-and-webnowplaying.js">Installing Spicetify</a></li>
+        <li><a href="#installing-spicetify">Installing Spicetify</a></li>
         <li><a href="#choosing-presets">Choosing Presets</a></li>
           </ul>
         </li>

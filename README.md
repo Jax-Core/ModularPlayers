@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Jax-Core/ModularPlayers">
-    <img src="https://i.imgur.com/EjekXps.png" alt="Logo" width="200" height="200">
+    <img src="https://i.imgur.com/EjekXps.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">ModularPlayers</h3>

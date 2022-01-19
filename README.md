@@ -124,7 +124,7 @@ And that is how you setup **ImageMagick**. You can now proceed to configure the 
 You can now proceed to choosing the presets.
 
 #### Choosing Presets:
-Follow the steps outlined below to setup custom clock presets:
+Follow the steps outlined below to setup custom player presets:
 
 1. Open Core and head over to the **Desktop** section.
 2. Select **ModularPlayers** from the list and proceed to the **Appearance** tab.

@@ -102,7 +102,7 @@ And that is how you setup **ImageMagick**. You can now proceed to configure the 
   - Manually paste DLL you copied in the second step.
   - Finally, restart Rainmeter and your plugin will be activated.
 
-#### Installing Spicetify and webnowplaying.js:
+#### Installing Spicetify:
 
 1. Open Powershell (Windows 10) or Windows Terminal (Windows 11) and run the commands that follow:
     ```

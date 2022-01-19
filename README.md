@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Jax-Core/ModularPlayers">
-    <img src="" alt="Logo" width="200" height="200">
+    <img src="https://i.imgur.com/EjekXps.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">ModularPlayers</h3>
@@ -36,7 +36,8 @@
         <li><a href="#setting-up">Styles Setup</a>
           <ul>
            <li><a href="#installing-imagemagick">Installing ImageMagick</a></li>
-        <li><a href="#choosing-presets">Choosing Presets</a>
+        <li><a href="#installing-spicetify-and-webnowplaying.js">Installing Spicetify</a></li>
+        <li><a href="#choosing-presets">Choosing Presets</a></li>
           </ul>
         </li>
       </ul>

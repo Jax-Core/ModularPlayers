@@ -80,7 +80,7 @@ Assuming you successfully downloaded and installed Rainmeter as well as JaxCore,
 
 ### Setting Up
 
-To use the custom clock styles, you must first install and configure **[ImageMagick](https://github.com/khanhas/MagickMeter) as well as [Spicetify](https://spicetify.app/).** If you already have **ImageMagick** and **Spicetify** setup, you can skip to choosing the presets; if not, follow the instructions below to setup **ImageMagick** and **Spicetify**.
+To use the custom player styles, you must first install and configure **[ImageMagick](https://github.com/khanhas/MagickMeter) as well as [Spicetify](https://spicetify.app/).** If you already have **ImageMagick** and **Spicetify** setup, you can skip to choosing the presets; if not, follow the instructions below to setup **ImageMagick** and **Spicetify**.
 
 
 #### Installing ImageMagick:
@@ -93,7 +93,7 @@ To use the custom clock styles, you must first install and configure **[ImageMag
 6. Leave the installation settings at their defaults and click Install.
 7. Restart Rainmeter and your plugin will be activated.
 
-And that is how you setup **ImageMagick**. You can now proceed to configure the Clock Presets.
+And that is how you setup **ImageMagick**. You can now proceed to configure the player Presets.
 
 * **Note:** An alternate approach for **Step 5** and **Step 6** is:
   - Download the [plugin DLLs](https://github.com/khanhas/MagickMeter/releases)

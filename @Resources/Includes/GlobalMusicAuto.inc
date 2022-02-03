@@ -72,7 +72,7 @@ Disabled=1
 
 [npCover]
 Measure=NowPlaying
-PlayerName=[state#NowPlayingMedia#]
+PlayerName=#NowPlayingMedia#
 PlayerType=Cover
 Substitute="":"#@#Images\Default.png"
 UpdateDivider=1
@@ -82,7 +82,7 @@ Disabled=1
 
 [npArtist]
 Measure=NowPlaying
-PlayerName=[state#NowPlayingMedia#]
+PlayerName=#NowPlayingMedia#
 PlayerType=Artist
 UpdateDivider=1
 Group=Music | NP
@@ -91,17 +91,18 @@ Disabled=1
 
 [npTrack]
 Measure=NowPlaying
-PlayerName=[state#NowPlayingMedia#]
+PlayerName=#NowPlayingMedia#
 PlayerType=Title
 OnChangeAction=[!UpdateMeterGroup Music][!Redraw]
 UpdateDivider=1
 Group=Music | NP
 DynamicVariables=1
 Disabled=1
+OnUpdateAction=[!Log "#NowPlayingMedia# [npTrack]"]
 
 [npProgress]
 Measure=NowPlaying
-PlayerName=[state#NowPlayingMedia#]
+PlayerName=#NowPlayingMedia#
 PlayerType=Progress
 Substitute="NaN":"1"
 UpdateDivider=1
@@ -111,7 +112,7 @@ Disabled=1
 
 [npCurrentPosition]
 Measure=NowPlaying
-PlayerName=[state#NowPlayingMedia#]
+PlayerName=#NowPlayingMedia#
 PlayerType=Position
 UpdateDivider=1
 Group=Music | NP
@@ -120,7 +121,7 @@ Disabled=1
 
 [npLength]
 Measure=NowPlaying
-PlayerName=[state#NowPlayingMedia#]
+PlayerName=#NowPlayingMedia#
 PlayerType=Duration
 UpdateDivider=1
 Group=Music | NP
@@ -129,7 +130,7 @@ Disabled=1
 
 [npRepeat]
 Measure=NowPlaying
-PlayerName=[state#NowPlayingMedia#]
+PlayerName=#NowPlayingMedia#
 PlayerType=Repeat
 IfCondition=npRepeat = 1
 IfTrueAction=[!SetOption Repeat MeterStyle Repeat1][!UpdateMeter Repeat][!Redraw]
@@ -143,7 +144,7 @@ Disabled=1
 
 [npShuffle]
 Measure=NowPlaying
-PlayerName=[state#NowPlayingMedia#]
+PlayerName=#NowPlayingMedia#
 PlayerType=Shuffle
 IfCondition=npShuffle = 0
 IfTrueAction=[!SetOption Shuffle MeterStyle "Shuffle0"][!UpdateMeter Shuffle][!Redraw]
@@ -155,7 +156,7 @@ Disabled=1
 
 [npHeart]
 Measure=NowPlaying
-PlayerName=[state#NowPlayingMedia#]
+PlayerName=#NowPlayingMedia#
 PlayerType=Rating
 IfCondition=npHeart = 0
 IfTrueAction=[!SetOption Heart MeterStyle "EmptyHeart"][!UpdateMeter Heart][!Redraw]

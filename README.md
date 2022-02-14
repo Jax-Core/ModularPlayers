@@ -134,5 +134,6 @@ Follow the steps outlined below to setup custom player presets:
 * **Note:** The **General** and **Appearance** tabs allow you to further customize each preset as required.
 
 ## Help and Credits
+- MediaPlayer plugin by [i2002](https://github.com/i2002)
 - MagickMeter and ImageMagick plugins along with Spicetify by [khanhas](https://github.com/khanhas)
 - Join the [Core Community Discord Server](https://discord.gg/JmgehPSDD6) for more help.

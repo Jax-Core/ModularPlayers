@@ -5,11 +5,46 @@ Sec.AnchorName=AnchorSuppli
 @includePlayerVars=#SKINSPATH##SKin.Name#\Main\Vars\#Style#.inc
 
 
-[Clock]
-Meter=String
-Text=Player style // #Style#
-MeterStyle=Set.String:S | Set.OptionCat:S
-
+; ---------------------------------------------------------------------------- ;
+;                                    Styles                                    ;
+; ---------------------------------------------------------------------------- ;
+[Item.Shape:S]
+X=(30*[Set.S])
+Y=(35*[SEt.S])r
+Shape=Rectangle 0,0,([ContentContainer:W]-#Set.P#),(50*[SEt.S]),(2*[Set.S]) | StrokeWidth 0 | Extend Fill
+Fill=Fill Color #Set.Sec_Color#
+Stroke=Stroke Color #Set.Ter_Color#
+MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Ter_Color#"][!SetOption #CURRENTSECTION# Stroke "Stroke Color #Set.Subtext_Color#,50"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Sec_Color#"][!SetOption #CURRENTSECTION# Stroke "Stroke Color #Set.Ter_Color#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+DynamicVariables=1
+Container=ContentContainer
+[Item.StringIcon:S]
+X=(50*[Set.S]/2)r
+Y=(50*[Set.S]/2)r
+StringAlign=leftCenter
+FontFace=Segoe Fluent Icons
+Container=ContentContainer
+[Item.String:S]
+X=(#Set.P#/2)R
+Y=r
+StringAlign=LeftCenter
+Container=ContentContainer
+[Item.Button.Shape:S]
+X=([ContentContainer:W]-#Set.P#-30*[SEt.S])
+Y=(-15*[Set.S])r
+Shape=Rectangle 0,0,(30*[Set.S]),(30*[Set.S]),(5*[Set.S]) | StrokeWidth 0 | Extend Stroke
+Stroke=Fill Color #Set.Positive_color#,100
+MouseOverAction=[!SetOption #CURRENTSECTION# Stroke "Fill Color #Set.Positive_color#,200"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Stroke "Fill Color #Set.Positive_color#,100"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+DynamicVariables=1
+Container=ContentContainer
+[Item.Button.StringIcon:S]
+X=(30*[Set.S]/2)r
+Y=(30*[Set.S]/2)r
+StringAlign=CenterCEnter
+Text=[\xe5ce]
+FontFace=Material Icons Round
+Container=ContentContainer
 
 [Box]
 X=(20*[Set.S])R
@@ -20,10 +55,40 @@ MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Text_Color#,1
 MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Text_Color#,10"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 DynamicVariables=1
 Container=ContentContainer
+
+; ---------------------------------------------------------------------------- ;
+;                                    Content                                   ;
+; ---------------------------------------------------------------------------- ;
+
+[Clock]
+Meter=String
+Text=Player style // #Style#
+MeterStyle=Set.String:S | Set.OptionCat:S
+
+[Item1.Shape]
+Meter=Shape
+MeterStyle=Item.Shape:S
+[Item1.StringIcon]
+Meter=String
+Text=[\xe814]
+MeterStyle=Set.String:S | Item.StringIcon:S
+[Item1.String]
+Meter=String
+Text=For all styles with an icon on the top left, MagickMeter is required. 
+MeterStyle=Set.String:S | Item.String:S
+[Item1.Button]
+Meter=Shape
+MeterStyle=Item.Button.Shape:S
+[Item1.Button.StringIcon]
+Meter=String
+Text=[\xe89e]
+LeftMouseUpAction=["https://github.com/khanhas/MagickMeter#how-to-install"]
+MeterStyle=Set.String:S | Item.Button.StringIcon:S
+
 [Box1]
 Meter=Shape
-X=(20*[Set.S])
-Y=(10*[Set.S])R
+X=(30*[Set.S])
+Y=(30*[Set.S])R
 MeterStyle=Box
 [Box2]
 Meter=Shape
@@ -39,7 +104,7 @@ Meter=Shape
 MeterStyle=Box
 [Box6]
 Meter=Shape
-X=(20*[Set.S])
+X=(30*[Set.S])
 Y=(20*[Set.S])R
 MeterStyle=Box
 [Box7]

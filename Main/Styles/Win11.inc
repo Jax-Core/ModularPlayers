@@ -108,7 +108,6 @@ LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
 
 [PlayPause]
 Meter=Image
-MeterStyle=
 X=(20*#Scale#)R
 Y=r
 W=(20*#scale#)
@@ -117,7 +116,7 @@ Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
 ImageTint=[FGC2]
 DynamicVariables=1
-Group=DynamicColors
+Group=DynamicColors | Music
 [Play]
 ImageName=#@#Icons\Play.png
 LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]

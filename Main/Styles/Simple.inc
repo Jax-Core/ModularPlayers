@@ -73,6 +73,7 @@ H=(20*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
 DynamicVariables=1
+Group=Music
 LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
 
 
@@ -86,6 +87,7 @@ H=(20*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
 DynamicVariables=1
+Group=Music
 [Play]
 ImageName=#@#Icons\Play.png
 LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
@@ -103,6 +105,7 @@ H=(20*#scale#)
 Grayscale=1
 ImageTint=#OppositeColor#
 DynamicVariables=1
+Group=Music
 LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]
 
 [ProgBar]

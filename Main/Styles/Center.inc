@@ -55,7 +55,7 @@ Meter=Shape
 X=r
 Y=(#GH#/2)
 Shape=Line (-#GW#/2+#P#),0,(#GW#/2-#P#),0 | StrokeWidth 2 | StrokeStartCap Triangle | StrokeEndCap Triangle | Stroke Color 255,255,255,50
-Shape2=Line (-#GW#/2+#P#),0,(-#GW#/2+#P#+(#GW#-#P#*2)*[#PlayerType#Progress]/100),0 | StrokeWidth 2 | StrokeStartCap Triangle | StrokeEndCap Triangle | Stroke Color 255,255,255,255
+Shape2=Line (-#GW#/2+#P#),0,(-#GW#/2+#P#+(#GW#-#P#*2)*(Clamp([#PlayerType#Progress],0,100))/100),0 | StrokeWidth 2 | StrokeStartCap Triangle | StrokeEndCap Triangle | Stroke Color 255,255,255,255
 DynamicVariables=1
 UpdateDivider=1
 [SArtist]

@@ -1,7 +1,11 @@
-[AdditionalOptions]
+
+[Option10]
 Meter=String
-Text=#Style# options
-MeterStyle=Set.String:S | Set.OptionCat:S
+Text=Album art / bar height
+MeterStyle=Set.String:S | Set.OptionName:S
+[Divider1]
+Meter=Shape
+MeterStyle=Set.Div:S
 
 [Option11]
 Meter=String
@@ -10,7 +14,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Divider1132s]
 Meter=Shape
 MeterStyle=Set.Div:S
-Group=Card
+
 [Option12]
 Meter=String
 Text=Side glow
@@ -18,7 +22,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Divider3]
 Meter=Shape
 MeterStyle=Set.Div:S
-Group=Card
+
 [Option13]
 Meter=String
 Text=Bar width
@@ -27,7 +31,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Divider4]
 Meter=Shape
 MeterStyle=Set.Div:S
-Group=Card
+
 [Option14]
 Meter=String
 Text=Bar rounding radius
@@ -36,7 +40,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Divider5]
 Meter=Shape
 MeterStyle=Set.Div:S
-Group=Card
+
 [Option15]
 Meter=String
 Text=Automatically scroll text
@@ -44,7 +48,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Divider6]
 Meter=Shape
 MeterStyle=Set.Div:S
-Group=Card
+
 [Option16]
 Meter=String
 Text=Text scrolling update rate
@@ -52,7 +56,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Divider7]
 Meter=Shape
 MeterStyle=Set.Div:S
-Group=Card
+
 [Option17]
 Meter=String
 Text=Text scrolling multiplier
@@ -73,6 +77,15 @@ Text=#Scale#
 MeterStyle=Set.String:S | Set.Value:S
 
 
+[H]
+Meter=Shape
+MeterStyle=Set.Textbox:S
+Type=Num|170|300
+Y=([Option10:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value10]
+Meter=String
+Text=#H#
+MeterStyle=Set.String:S | Set.Value:S
 [HideAlbum]
 Meter=Shape
 MeterStyle=Set.Bool:S

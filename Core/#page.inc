@@ -1,74 +1,57 @@
-[General:Category]
+[PageList.Configuration]
 Meter=String
-MeterStyle=Set.String:S | Pagecat:S
-Text=GENERAL
-Y=(#Set.P#+64*[Set.S])
-[Info]
+MeterStyle=Set.String:S | PageList.Category:S
+Text=CONFIGURATION
+
+[Info.Shape]
 Meter=Shape
-Y=(10*[Set.S])R
-MeterStyle=PageBox:S
-Fill=Fill Color #Set.Accent_Color#,(#BarHandler# = 1 ? 255: 0)
-Handle=1
-
-[InfoIcon]
-Meter=Image
-MeterStyle=PageIcon:S
-Greyscale=(#BarHandler# = 1 ? 1 : 0)
-
-[1]
+MeterStyle=PageList.Item.Shape:S
+[Info.Icon.String]
+Meter=String
+Text="[\xe88e]"
+MeterStyle=Set.String:S | PageList.Item.Icon.String:S
+[Info.String]
 Meter=String
 Text=Info
-DynamicVariables-1
-MeterStyle=Set.String:S | PageText:S
+MeterStyle=Set.String:S | PageList.Item.String:S
 
-[General]
+[General.Shape]
 Meter=Shape
-Y=(10*[Set.S])R
-MeterStyle=PageBox:S
-Fill=Fill Color #Set.Accent_Color#,(#BarHandler# = 2 ? 255: 0)
-Handle=2
-
-[GeneralIcon]
-Meter=Image
-MeterStyle=PageIcon:S
-Greyscale=(#BarHandler# = 2 ? 1 : 0)
-
-[2]
+MeterStyle=PageList.Item.Shape:S
+[General.Icon.String]
+Meter=String
+Text="[\xe8b8]"
+MeterStyle=Set.String:S | PageList.Item.Icon.String:S
+[General.String]
 Meter=String
 Text=General
-DynamicVariables-1
-MeterStyle=Set.String:S | PageText:S
-[Appearance]
+MeterStyle=Set.String:S | PageList.Item.String:S
+
+[NewMedia.Shape]
 Meter=Shape
-Y=(10*[Set.S])R
-MeterStyle=PageBox:S
-Fill=Fill Color #Set.Accent_Color#,(#BarHandler# = 3 ? 255: 0)
-Handle=3
-
-[AppearanceIcon]
-Meter=Image
-MeterStyle=PageIcon:S
-Greyscale=(#BarHandler# = 3 ? 1 : 0)
-
-[3]
+MeterStyle=PageList.Item.Shape:S
+[NewMedia.Icon.String]
 Meter=String
-Text=Appearance
-DynamicVariables-1
-MeterStyle=Set.String:S | PageText:S
-; [Media]
-; Meter=Shape
-; Y=(10*[Set.S])R
-; MeterStyle=PageBox:S
-; Fill=Fill Color #Set.Accent_Color#,(#BarHandler# = 5 ? 255: 0)
-; Handle=5
+Text="[\xe405]"
+MeterStyle=Set.String:S | PageList.Item.Icon.String:S
+[NewMedia.String]
+Meter=String
+Text=Media
+MeterStyle=Set.String:S | PageList.Item.String:S
 
-; [MediaIcon]
-; Meter=Image
-; MeterStyle=PageIcon:S
-; Greyscale=(#BarHandler# = 5 ? 1 : 0)
+[PageList.looknfeel]
+Meter=String
+MeterStyle=Set.String:S | PageList.Category:S
+Text=LOOK N' FEEL
 
-; [5]
-; Meter=String
-; Text=Media
-; DynamicVariables-1
-; MeterStyle=Set.String:S | PageText:S
+[Appearance.Shape]
+Meter=Shape
+MeterStyle=PageList.Item.Shape:S
+[Appearance.Icon.String]
+Meter=String
+Text="[\xe243]"
+MeterStyle=Set.String:S | PageList.Item.Icon.String:S
+[Appearance.String]
+Meter=String
+Text=Style options
+MeterStyle=Set.String:S | PageList.Item.String:S

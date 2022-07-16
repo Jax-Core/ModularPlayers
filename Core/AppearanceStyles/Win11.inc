@@ -1,7 +1,4 @@
-[AdditionalOptions]
-Meter=String
-Text=#Style# options
-MeterStyle=Set.String:S | Set.OptionCat:S
+
 
 [Option21]
 Meter=String

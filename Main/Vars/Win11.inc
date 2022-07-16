@@ -1,7 +1,7 @@
 [Variables]
 Scale=1
 Blur=Acrylic
-BlurCorner=Round
+BlurCorner=None
 Stroke=1
 PrimaryColor=0,0,0
 PrimaryOpacity=50

@@ -1,188 +1,247 @@
+[Variables]
+Sec.SaveLocation=#SKINSPATH##SKin.Name#\@Resources\Vars.inc
+
+
+; ---------------------------------------------------------------------------- ;
+;                                    Styles                                    ;
+; ---------------------------------------------------------------------------- ;
+[Item.Shape:S]
+X=(30*[Set.S])
+Y=(35*[SEt.S])r
+Shape=Rectangle 0,0,([ContentContainer:W]-#Set.P#),(50*[SEt.S]),(2*[Set.S]) | StrokeWidth 0 | Extend Fill
+Fill=Fill Color #Set.Sec_Color#
+Stroke=Stroke Color #Set.Ter_Color#
+MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Ter_Color#"][!SetOption #CURRENTSECTION# Stroke "Stroke Color #Set.Subtext_Color#,50"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Sec_Color#"][!SetOption #CURRENTSECTION# Stroke "Stroke Color #Set.Ter_Color#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+DynamicVariables=1
+Container=ContentContainer
+[Item.StringIcon:S]
+X=(50*[Set.S]/2)r
+Y=(50*[Set.S]/2)r
+StringAlign=leftCenter
+FontFace=Segoe Fluent Icons
+Container=ContentContainer
+[Item.String:S]
+X=(#Set.P#/2)R
+Y=r
+StringAlign=LeftCenter
+Container=ContentContainer
+[Item.Button.Shape:S]
+X=([ContentContainer:W]-#Set.P#-30*[SEt.S])
+Y=(-15*[Set.S])r
+Shape=Rectangle 0,0,(30*[Set.S]),(30*[Set.S]),(5*[Set.S]) | StrokeWidth 0 | Extend Stroke
+Stroke=Fill Color #Set.Positive_color#,100
+MouseOverAction=[!SetOption #CURRENTSECTION# Stroke "Fill Color #Set.Positive_color#,200"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Stroke "Fill Color #Set.Positive_color#,100"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+DynamicVariables=1
+Container=ContentContainer
+[Item.Button.StringIcon:S]
+X=(30*[Set.S]/2)r
+Y=(30*[Set.S]/2)r
+StringAlign=CenterCEnter
+Text=[\xe5ce]
+FontFace=Material Icons Round
+Container=ContentContainer
+
+[Box]
+X=(20*[Set.S])R
+Y=r
+Shape=Rectangle  0,0,(([ContentContainer:W]-120*[Set.S])/5),(([ContentContainer:W]-120*[Set.S])/5),#set.R# | StrokeWidth 0 | Extend Fill
+Fill=Fill Color #Set.Text_Color#,10
+MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Text_Color#,150"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Text_Color#,10"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+DynamicVariables=1
+Container=ContentContainer
 
 ; ---------------------------------------------------------------------------- ;
 ;                                    Content                                   ;
 ; ---------------------------------------------------------------------------- ;
 
-[Behavior]
+[Clock]
 Meter=String
-Text=Media player
+Text=Player style // #Style#
 MeterStyle=Set.String:S | Set.OptionCat:S
 
-; --------------------------------- Section2 --------------------------------- ;
-
-[Section1]
+[Item1.Shape]
 Meter=Shape
+MeterStyle=Item.Shape:S
+[Item1.StringIcon]
+Meter=String
+Text=[\xe814]
+MeterStyle=Set.String:S | Item.StringIcon:S
+[Item1.String]
+Meter=String
+Text=For all styles with an icon on the top left, MagickMeter is required. 
+MeterStyle=Set.String:S | Item.String:S
+[Item1.Button]
+Meter=Shape
+MeterStyle=Item.Button.Shape:S
+[Item1.Button.StringIcon]
+Meter=String
+Text=[\xe89e]
+LeftMouseUpAction=["https://github.com/khanhas/MagickMeter#how-to-install"]
+MeterStyle=Set.String:S | Item.Button.StringIcon:S
+
+[Box1]
+Meter=Shape
+X=(30*[Set.S])
+Y=(30*[Set.S])R
+MeterStyle=Box
+[Box2]
+Meter=Shape
+MeterStyle=Box
+[Box3]
+Meter=Shape
+MeterStyle=Box
+[Box4]
+Meter=Shape
+MeterStyle=Box
+[Box5]
+Meter=Shape
+MeterStyle=Box
+[Box6]
+Meter=Shape
+X=(30*[Set.S])
+Y=(20*[Set.S])R
+MeterStyle=Box
+[Box7]
+Meter=Shape
+MeterStyle=Box
+[Box8]
+Meter=Shape
+MeterStyle=Box
+[Box9]
+Meter=Shape
+MeterStyle=Box
+[Box10]
+Meter=Shape
+MeterStyle=Box
+[Box11]
+Meter=Shape
+X=(30*[Set.S])
+Y=(30*[Set.S])R
+MeterStyle=Box
+
+
+[Side]
+Meter=Image
+Imagename=#SKINSPATH#ModularPlayers\@Resources\Images\Preview\#CURRENTSECTION#.png
+X=([Box1:X]-[ContentContainer:X])
+Y=([Box1:Y]-[ContentContainer:Y])
+W=(([ContentContainer:W]-120*[Set.S])/5)
+H=(([ContentContainer:W]-120*[Set.S])/5)
+Solidcolor=0,0,0,1
+Leftmouseupaction=[!WriteKeyValue Variables Style #CURRENTSECTION# "#Sec.SaveLocation#"][!Refresh][!UpdateMeasure Auto_Refresh:M]
+DynamicVariables=1
+Container=ContentContainer
+ToolTipTitle=#CURRENTSECTION#
+ToolTipText=Click to switch to this layout
+
+[Blur]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
+Y=r
+MeterStyle=Side
+
+[MMI1]
+Meter=Image
+ImageName=#@#Icons\Settings\MagickMeterIcon.png
 X=r
-Y=(15*[Set.S])R
-Shape=Rectangle 0,0,([ContentContainer:W]-#Set.P#),(100*[Set.S]),(#Set.R#/4) | StrokeWidth 0 | Fill Color #Set.Sec_Color#
-Container=ContentContainer
+y=r
+W=(24*[Set.S])
+H=(24*[Set.S])
+Padding=10,10,10,10
 DynamicVariables=1
+LeftMouseUpAction=[!ActivateConfig "#Skin.Name#\@Start"]
+Container=ContentContainer
+ToolTipTitle=MagickMeter is required for this layout!
+ToolTipText=Click on the guide above to learn how to install it.
 
-[Section1.Icon]
-Meter=String
-Text=[\xec4f]
-X=(#Set.P#)r
-Y=(100/2*[Set.S])r
-FontSize=(20*[set.s])
-MeterStyle=Set.String:S | Set.Icon:S | Section1.Icon:#MediaType#
-[Section1.Icon:Modern]
-FontColor=#Set.Accent_Color#
-InlineSetting=Shadow | 0 | 0 | 2 | #Set.Accent_Color#
-[Section1.Icon:Auto]
-FontColor=#Set.Accent_Color_2#
-InlineSetting=Shadow | 0 | 0 | 2 | #Set.Accent_Color_2#
-
-[Section1.Text]
-Meter=String
-X=(5*[Set.S])R
+[Simple]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
 Y=r
-W=([ContentContainer:W]-#Set.P#*4-300*[Set.S])
-ClipString=2
-FontSize=(10*[Set.S])
-Container=ContentContainer
-StringAlign=LeftCenter
-InlinePattern=#CRLF#.*
-InlineSetting=Color | #Set.SubText_Color#
-MeterStyle=Set.String:S | Section1.Text:#MediaType#
-[Section1.Text:Modern]
-Text=Method: #MediaType##CRLF#Gets media status from all media players.
-[Section1.Text:Auto]
-Text=Method: #MediaType##CRLF#Switches between nowplaying and webnowplaying plugins.
+MeterStyle=Side
 
-[MediaType:]
-Meter=Shape
-Y=(-30/2*[Set.S])r
-X=([ContentContainer:W]-#Set.P#-300*[Set.S])
-Shape2=Rectangle ([&Func:returnBool('MediaType', 'Modern')] = 0 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0 |
-0Act=[!WriteKeyValue Variables MediaType "Auto" "#Sec.SaveLocation#"]
-1Act=[!WriteKeyValue Variables MediaType "Modern" "#Sec.SaveLocation#"]
-MeterStyle=Set.Pick:S
-Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[MediaType:0]
-Meter=String
-Text=Auto
-FontColor=[&Func:returnBool('MediaType', 'Modern', '#Set.Text_Color#', '#Set.Pri_Color#')]
-LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
-MeterStyle=Set.String:S | Set.PickOption_0:S
-[MediaType:1]
-Meter=String
-Text=Modern
-FontColor=[&Func:returnBool('MediaType', 'Modern', '#Set.Pri_color#', '#Set.Text_Color#')]
-LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
-MeterStyle=Set.String:S | Set.PickOption_1:S
-
-; --------------------------------- Section2 --------------------------------- ;
-
-[Section2]
-Meter=Shape
-X=(30*[Set.S])
-Y=(60*[Set.S])r
-Shape=Rectangle 0,0,([ContentContainer:W]-#Set.P#),(100*[Set.S]),(#Set.R#/4) | StrokeWidth 0 | Fill Color #Set.Sec_Color#
-Container=ContentContainer
-DynamicVariables=1
-
-[Section2.Icon]
-Meter=String
-Text=[\xe7b3]
-X=(#Set.P#)r
-Y=(100/2*[Set.S])r
-FontSize=(20*[set.s])
-MeterStyle=Set.String:S | Set.Icon:S | Section2.Icon:#AutoHide#
-[Section2.Icon:0]
-FontColor=#Set.Accent_Color#
-InlineSetting=Shadow | 0 | 0 | 2 | #Set.Accent_Color#
-[Section2.Icon:1]
-FontColor=#Set.Positive_Color#
-InlineSetting=Shadow | 0 | 0 | 2 | #Set.Positive_Color#
-
-[Section2.Text]
-Meter=String
-X=(5*[Set.S])R
+[Card]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
 Y=r
-W=([ContentContainer:W]-#Set.P#*4-60*[Set.S])
-ClipString=2
-FontSize=(10*[Set.S])
-Container=ContentContainer
-StringAlign=LeftCenter
-InlinePattern=#CRLF#.*
-InlineSetting=Color | #Set.SubText_Color#
-MeterStyle=Set.String:S | Section2.Text:#AutoHide#
-[Section2.Text:0]
-Text=Player will always be visible#CRLF#Player will display nothing when no media is playing
-[Section2.Text:1]
-Text=Player will automatically hide itself#CRLF#When there are no media playing, the player hides itself
+MeterStyle=Side
 
-[AutoHide]
-Meter=Shape
-MeterStyle=Set.Bool:S
-Y=(-20/2*[Set.S])r
-X=([ContentContainer:W]-#Set.P#-60*[Set.S])
+[MMI2]
+Meter=Image
+MeterStyle=MMI1
 
-; --------------------------------- Section3 --------------------------------- ;
+[Modern]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
+Y=r
+MeterStyle=Side
 
-[Section3]
-Meter=Shape
-X=(30*[Set.S])
-Y=(70*[Set.S])r
-Shape=Rectangle 0,0,([ContentContainer:W]-#Set.P#),(150*[Set.S]),(#Set.R#/4) | StrokeWidth 0 | Fill Color #Set.Sec_Color#,150
-Container=ContentContainer
-DynamicVariables=1
+[Neumorphism]
+Meter=Image
+X=([Box6:X]-[ContentContainer:X])
+Y=([Box6:Y]-[ContentContainer:Y])
+MeterStyle=Side
 
-[Section3.Text]
+[Center]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
+Y=r
+MeterStyle=Side
+
+[BigCirc]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
+Y=r
+MeterStyle=Side
+
+[MMI8]
+Meter=Image
+MeterStyle=MMI1
+
+[MIUI]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
+Y=r
+MeterStyle=Side
+
+[Win11]
+Meter=Image
+X=([Box1:W]+20*[Set.S])r
+Y=r
+MeterStyle=Side
+
+[16]
+Meter=Image
+X=([Box11:X]-[ContentContainer:X])
+Y=([Box11:Y]-[ContentContainer:Y])
+MeterStyle=Side
+
+[MMI11]
+Meter=Image
+MeterStyle=MMI1
+
+; ---------------------------------------------------------------------------- ;
+;                                     Input                                    ;
+; ---------------------------------------------------------------------------- ;
+
+[Header2]
 Meter=String
-X=(#Set.P#)r
-Y=(150/2*[Set.S])r
-FontSize=(12*[set.s])
-MeterStyle=Set.String:S | Section3.Text:#Mediatype#
-Container=ContentContainer
-StringAlign=LeftCenter
-InlinePattern=#CRLF#.*
-InlineSetting=Color | #Set.SubText_Color#
-InlinePattern2=https://.*$
-InlinePattern3=https://.*$
-InlinePattern4=https://.*$
-InlineSetting2=Color | 059FD8
-InlineSetting3=Size | (10*[Set.S])
-[Section3.Text:Auto]
-Text=For Spotify:#CRLF#You'll need Spicetify, follow this guide to install:#CRLF#https://github.com/Jax-Core/ModularPlayers#how-to-install-spicetify-cli
-MouseOverAction=[!SetOption #CURRENTSECTION# InlineSetting4 "Underline"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# InlineSetting4 ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-Leftmouseupaction=["https://github.com/Jax-Core/ModularPlayers#how-to-install-spicetify-cli"]
-[Section3.Text:Modern]
-Text=About this method:#CRLF#EXPERIMENTAL: As this is a newly developed method, it is not expected to fully work.#CRLF#Made entirely possible by i2002's MediaPlayer.dll plugin. Check it out here:#CRLF#https://github.com/i2002/RainmeterMediaPlayer
-MouseOverAction=[!SetOption #CURRENTSECTION# InlineSetting4 "Underline"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# InlineSetting4 ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-Leftmouseupaction=["https://github.com/Jax-Core/ModularPlayers#how-to-install-spicetify-cli"]
+Text=Customization
+Y=([16:YH])
+MeterStyle=Set.String:S | Set.OptionCat:S
 
-; --------------------------------- Section4 --------------------------------- ;
-
-[Section4]
+[Item2.Shape]
 Meter=Shape
-X=(30*[Set.S])
-Y=(85*[Set.S])r
-Shape=Rectangle 0,0,([ContentContainer:W]-#Set.P#),(150*[Set.S]),(#Set.R#/4) | StrokeWidth 0 | Fill Color #Set.Sec_Color#,150
-Container=ContentContainer
-DynamicVariables=1
-Hidden=[&Func:returnBool('Mediatype', 'Modern')]
-
-[Section4.Text]
+LeftMouseUpAction=[!WriteKeyvalue Variables "Skin.Set_Page" "Appearance" "#@#SecVar.inc"][!Refresh]
+MeterStyle=Item.Shape:S
+[Item2.StringIcon]
 Meter=String
-X=(#Set.P#)r
-Y=(150/2*[Set.S])r
-FontSize=(12*[set.s])
-MeterStyle=Set.String:S | Section4.Text:#Mediatype#
-Container=ContentContainer
-StringAlign=LeftCenter
-InlinePattern=#CRLF#.*
-InlineSetting=Color | #Set.SubText_Color#
-InlinePattern2=https://.*$
-InlinePattern3=https://.*$
-InlinePattern4=https://.*$
-InlineSetting2=Color | 059FD8
-InlineSetting3=Size | (10*[Set.S])
-Hidden=[&Func:returnBool('Mediatype', 'Modern')]
-[Section4.Text:Auto]
-Text=For Web:#CRLF#Requires the WebNowPlaying extension to be installed on your browser:#CRLF#https://chrome.google.com/webstore/detail/webnowplaying-companion/jfakgfcdgpghbbefmdfjkbdlibjgnbli
-MouseOverAction=[!SetOption #CURRENTSECTION# InlineSetting4 "Underline"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# InlineSetting4 ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-Leftmouseupaction=["https://chrome.google.com/webstore/detail/webnowplaying-companion/jfakgfcdgpghbbefmdfjkbdlibjgnbli"]
+Text=[\xe790]
+MeterStyle=Set.String:S | Item.StringIcon:S
+[Item2.String]
+Meter=String
+Text=Customize player in style options
+MeterStyle=Set.String:S | Item.String:S

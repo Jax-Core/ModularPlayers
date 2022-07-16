@@ -12,7 +12,7 @@ UpdateDivider=-1
 
 [Variables]
 GW=(500*#scale#)
-GH=(250*#scale#)
+GH=(#H#*#scale#)
 P=(50*#Scale#)
 
 Shuffle=0
@@ -78,7 +78,7 @@ This=(-(200*#scale#)/2),0,0,0,(#GH#/2),(#GH#/2) | [AC] ; 0.2 | 0,0,0,1 ; 1.0
 Shape2=Rectangle (20*#scale#),#P#,(#BarW#*#Scale#),(#GH#-#P#*2),(#BarCorner#*#scale#) | StrokeWidth 0 | Fill Color 255,255,255
 
 
-[CreateShadow]
+[CreateShadow0]
 Measure=Plugin
 Plugin=MagickMeter
 Disabled=#HideAlbum#
@@ -87,7 +87,7 @@ Image=Rectangle (35*#scale#),#P#,(#GH#-#P#*2),(#GH#-#P#*2),(#R#/2),(#R#/2) | Sha
 [IShadow]
 Meter=Image
 Hidden=#HideAlbum#
-MeasureName=CreateShadow
+MeasureName=CreateShadow#HideAlbum#
 
 [IC]
 Meter=Shape
@@ -108,8 +108,8 @@ Group=Music
 
 [SMetaDataSection]
 Meter=Shape
-X=(#HideAlbum# = 0 ? (200*#scale#) : #P#)
-Y=(#GH#/2-(68*#scale#)/2)
+X=(#HideAlbum# = 0 ? (#GH#-#P#) : #P#)
+Y=(#GH#/2-(50*#scale#)/2)
 Shape=Rectangle 0,0,((#GW#)-120*#scale#),(#GH#-2*#P#) | StrokeWidth 0 | Fill LinearGradient This
 This=180 | 0,0,0 ; 0.7 | 0,0,0,0 ; 1
 DynamicVariables=1
@@ -120,7 +120,7 @@ MeterStyle=S
 UpdateDivider=1
 ClipString=2
 FontWeight=600
-FontSize=(20*#scale#)
+FontSize=(16*#scale#)
 FontColor=255,255,255
 DynamicVariables=1
 MeasureName=#PlayerType#Track
@@ -135,10 +135,10 @@ Hidden=([SName1:W]>380*#Scale#?0:1)
 [SArtist1]
 Meter=String
 MeterStyle=S
-Y=(41*#scale#)
+Y=(29*#scale#)
 DynamicVariables=1
 ClipString=1
-FontSize=(15*#scale#)
+FontSize=(12*#scale#)
 FontFace=Nunito Sans SemiBold
 FontColor=255,255,255,150
 MeasureName=#PlayerType#Artist

@@ -90,13 +90,13 @@ Download and run the `.rmskin` file from the latest release **[here](https://git
 
 ![InstallStep](https://i.imgur.com/6TbBlTo.png)
   
-#### 3. Restart Rainmeter 
+#### 3. Restart Rainmeter by `Right Click (Anything JaxCore) -> Developer options -> Reload Rainmeter`
 
 Guide from [MagickMeter](https://github.com/khanhas/MagickMeter) by Khanhas
 
 ### Spicetify (Full Spotify support)
 
-1. Open Powershell, copy the following commands, paste and press enter:
+#### 1. Open Powershell, copy the following commands, paste and press enter:
     ```
       Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression
 
@@ -108,12 +108,12 @@ Guide from [MagickMeter](https://github.com/khanhas/MagickMeter) by Khanhas
       ```
         spicetify config inject_css 0 replace_colors 0
       ```
-2. And finally, run the following command to save and apply all your changes:
+#### 2. And finally, run the following command to save and apply all your changes:
     ```
       spicetify backup apply
     ```
     
-3. Restart Rainmeter
+#### 3. Restart Rainmeter by `Right Click (Anything JaxCore) -> Developer options -> Reload Rainmeter`
 
 ## Help and Credits
 - MediaPlayer plugin by [i2002](https://github.com/i2002)

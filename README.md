@@ -62,6 +62,8 @@ ModularPlayers is a Rainmeter skin that includes a gallery of hand-crafted media
 * Gesture Driven Media Controls
 
 <!-- INSTALLATION AND SETUP -->
+
+
 ## Getting Started
 
 ### Prerequisites
@@ -69,51 +71,19 @@ ModularPlayers is a Rainmeter skin that includes a gallery of hand-crafted media
 - For older systems, **Powershell v5.1 or newer** is required. Upgrade powershell **[here](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7.2#upgrading-existing-windows-powershell)**!
 
 ### Installation 
-**By Powershell CLI:**
-Run the following command in Powershell (`win + r` -> `powershell.exe` / search)
+Run the following command in Powershell to get the latest version of JaxCore (`win + r` -> `powershell.exe` / search)
 ```
-$installSkin="ModularPlayers";Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
+Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
 ```
-**By legacy [Rainmeter](https://www.rainmeter.net/) .rmskin installer:**
-Download and run the `.rmskin` file from the latest release **[here](https://github.com/Jax-Core/ValliStart/releases/latest)**.
-> Note:  If you find that the JaxCore option is red on the startup pop-up, please press the red button and Core will be installed automatically. Perchance this fails, you can manually install Core by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
-<br />
-<br />
+Alternatively you can get it on the [website](https://jax-core.github.io/)
 
-## Additional requisites
-### ImageMagick (Blur generation)
-#### 1. Download ImageMagick: https://www.imagemagick.org/script/download.php#windows
+After you've proceeded through the welcome screen, select this widget (might have to scroll down) and click Install. It will appear in the library page after that.
 
-![Download](https://i.imgur.com/gfjRZxh.png)
-
-#### 2. Install ImageMagick. You must check `Add application directory to your system path`:
-
-![InstallStep](https://i.imgur.com/6TbBlTo.png)
-  
-#### 3. Restart Rainmeter by `Right Click (Anything JaxCore) -> Developer options -> Reload Rainmeter`
-
-Guide from [MagickMeter](https://github.com/khanhas/MagickMeter) by Khanhas
-
-### Spicetify (Full Spotify support)
-
-#### 1. Open Powershell, copy the following commands, paste and press enter:
-    ```
-      Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression
-
-      spicetify
-
-      spicetify config extensions webnowplaying.js
-    ```
-   **If aren't using Spicetify for theming, run the following command**
-      ```
-        spicetify config inject_css 0 replace_colors 0
-      ```
-#### 2. And finally, run the following command to save and apply all your changes:
-    ```
-      spicetify backup apply
-    ```
-    
-#### 3. Restart Rainmeter by `Right Click (Anything JaxCore) -> Developer options -> Reload Rainmeter`
+### Setting Up
+Use the JaxCore menu to configure the players's colors, style, fillings and more.
+FAQs can be found in the [documentation](https://jaxcore.gitbook.io/core/widgets/modularplayers)
+<br>
+<br>
 
 ## Help and Credits
 - MediaPlayer plugin by [i2002](https://github.com/i2002)

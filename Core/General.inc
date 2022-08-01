@@ -79,7 +79,7 @@ MeterStyle=Item.Button.Shape:S
 [Item1.Button.StringIcon]
 Meter=String
 Text=[\xe89e]
-LeftMouseUpAction=["https://github.com/khanhas/MagickMeter#how-to-install"]
+LeftMouseUpAction=["https://jaxcore.gitbook.io/core/getting-started/additional-requisites#imagemagick"]
 MeterStyle=Set.String:S | Item.Button.StringIcon:S
 
 [Box1]

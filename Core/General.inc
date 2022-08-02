@@ -141,6 +141,8 @@ ToolTipText=Click to switch to this layout
 Meter=Image
 X=([Box1:W]+20*[Set.S])r
 Y=r
+Leftmouseupaction=[!CommandMeasure Func "PopupImageMagick('#CURRENTSECTION#', 'BangToRun')"]
+BangToRun=[!WriteKeyValue Variables Style #CURRENTSECTION# "#Sec.SaveLocation#"][!Refresh][!UpdateMeasure Auto_Refresh:M]
 MeterStyle=Side
 
 [MMI1]
@@ -167,6 +169,8 @@ MeterStyle=Side
 Meter=Image
 X=([Box1:W]+20*[Set.S])r
 Y=r
+Leftmouseupaction=[!CommandMeasure Func "PopupImageMagick('#CURRENTSECTION#', 'BangToRun')"]
+BangToRun=[!WriteKeyValue Variables Style #CURRENTSECTION# "#Sec.SaveLocation#"][!Refresh][!UpdateMeasure Auto_Refresh:M]
 MeterStyle=Side
 
 [MMI2]
@@ -195,6 +199,8 @@ MeterStyle=Side
 Meter=Image
 X=([Box1:W]+20*[Set.S])r
 Y=r
+Leftmouseupaction=[!CommandMeasure Func "PopupImageMagick('#CURRENTSECTION#', 'BangToRun')"]
+BangToRun=[!WriteKeyValue Variables Style #CURRENTSECTION# "#Sec.SaveLocation#"][!Refresh][!UpdateMeasure Auto_Refresh:M]
 MeterStyle=Side
 
 [MMI8]
@@ -217,6 +223,8 @@ MeterStyle=Side
 Meter=Image
 X=([Box11:X]-[ContentContainer:X])
 Y=([Box11:Y]-[ContentContainer:Y])
+Leftmouseupaction=[!CommandMeasure Func "PopupImageMagick('#CURRENTSECTION#', 'BangToRun')"]
+BangToRun=[!WriteKeyValue Variables Style #CURRENTSECTION# "#Sec.SaveLocation#"][!Refresh][!UpdateMeasure Auto_Refresh:M]
 MeterStyle=Side
 
 [MMI11]

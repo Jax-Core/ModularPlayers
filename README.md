@@ -12,6 +12,7 @@
     <a href="https://discord.gg/JmgehPSDD6">Help, Report Bugs & Request Features »</a>
   </p>
 </div>
+
 <!-- END HeaderSmall.mustache -->
 <!-- START ShieldsBasic.mustache -->
 <p align="center">
@@ -25,6 +26,7 @@
 ## About
 
 ![ModularPlayers](https://raw.githubusercontent.com/Jax-Core/ReadME-Template/main/Resources/Splash/ModularPlayers.png)
+
 <!-- END About.mustache -->
 **ModularPlayers** is a gallery of hand-crafted nowplaying metadata widgets.
 
@@ -51,14 +53,15 @@ Run the following command in Powershell to download the latest version of JaxCor
 (To launch Powershell as an Admin: `Win + R` -> `powershell` -> Press `CTRL + SHIFT + ENTER` on your keyboard. Powershell can also be launched via Windows Search.)
 
 ```
-Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
+iwr -useb "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | iex
 ```
 
 > Alternatively you can download it from the [website](https://jax-core.github.io/)
 
 After you've proceeded through the welcome screen, select `ModularPlayers` (might have to scroll down) and click `Install`. It will appear in the library page after that.
 <br />
-<br /><!-- END GetStarted.mustache -->
+<br />
+<!-- END GetStarted.mustache -->
 <!-- START Setup.mustache -->
 
 ### Configuration

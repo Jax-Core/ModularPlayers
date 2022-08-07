@@ -166,7 +166,7 @@ LeftMouseUpAction=[!SetOption Heart MeterStyle Fullheart][!UpdateMeter Heart][!R
 Meter=Image
 ImageName=#@#Icons\Shuffle.png
 X=(20*#Scale#)R
-Y=(#GH#*0.63)
+Y=(#GH#*0.625)
 W=(20*#scale#)
 H=(20*#scale#)
 Grayscale=1
@@ -231,7 +231,7 @@ LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]
 [Repeat]
 Meter=Image
 X=(20*#Scale#)R
-Y=(#GH#*0.63)
+Y=(#GH#*0.625)
 W=(20*#scale#)
 H=(20*#scale#)
 Grayscale=1

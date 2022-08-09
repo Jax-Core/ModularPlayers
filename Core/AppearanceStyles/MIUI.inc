@@ -1,4 +1,15 @@
-
+[ExtraControlsTitle]
+Meter=String
+Text="Extra Controls"
+MeterStyle=Set.String:S | Set.OptionCat:S
+[Option1]
+Meter=String
+Text="Shuffle Button"
+MeterStyle=Set.String:S | Set.OptionName:S
+[Option2]
+Meter=String
+Text="Repeat Button"
+MeterStyle=Set.String:S | Set.OptionName:S
 
 ; ---------------------------------------------------------------------------- ;
 ;                                   Function                                   ;
@@ -13,6 +24,15 @@ Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Meter=String
 Text=#Scale#
 MeterStyle=Set.String:S | Set.Value:S
+
+[ShowShuffle]
+Meter=Shape
+MeterStyle=Set.Bool:S
+Y=([Option1:Y]-#Set.P#+(-20/2+8)*[Set.S])
+[ShowRepeat]
+Meter=Shape
+MeterStyle=Set.Bool:S
+Y=([Option2:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
 ; ---------------------------------------------------------------------------- ;
 ;                                    Anchor                                    ;

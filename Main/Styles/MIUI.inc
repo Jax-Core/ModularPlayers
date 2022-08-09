@@ -4,9 +4,9 @@ GH=(170*#scale#)
 P=(22*#Scale#)
 
 
-Shuffle=0
+Shuffle=1
 Control=1
-Repeat=0
+Repeat=1
 Heart=1
 Prog=1
 ;==============================================================================================
@@ -162,12 +162,31 @@ LeftMouseUpAction=[!SetOption Heart MeterStyle EmptyHeart][!UpdateMeter Heart][!
 ImageName=#@#Icons\Heart.png
 LeftMouseUpAction=[!SetOption Heart MeterStyle Fullheart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "ToggleThumbsUp"]
 
+[Shuffle]
+Meter=Image
+ImageName=#@#Icons\Shuffle.png
+X=(20*#Scale#)R
+Y=(#GH#*0.63)
+W=(20*#scale#*#ShowShuffle#)
+H=(20*#scale#*#ShowShuffle#)
+Hidden=(1-#ShowShuffle#)
+Grayscale=1
+ImageTint=[FGC2]
+DynamicVariables=1
+Group=DynamicColors | Music
+Container=C
+[Shuffle0]
+ImageAlpha=150
+LeftMouseUpAction=[!SetOption Shuffle MeterStyle "Shuffle1"][!UpdateMeter Shuffle][!Redraw][!CommandMeasure state#NowPlayingMedia# "Shuffle"]
+[Shuffle1]
+ImageAlpha=255
+LeftMouseUpAction=[!SetOption Shuffle MeterStyle "Shuffle0"][!UpdateMeter Shuffle][!Redraw][!CommandMeasure state#NowPlayingMedia# "Shuffle"]
 
 [Previous]
 Meter=Image
 ImageName=#@#Icons\Previous.png
 X=(20*#Scale#)R
-Y=r
+Y=(#GH#*0.6)
 W=(20*#scale#)
 H=(20*#scale#)
 Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
@@ -176,7 +195,6 @@ ImageTint=[FGC2]
 DynamicVariables=1
 Group=DynamicColors
 LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
-
 
 [PlayPause]
 Meter=Image
@@ -210,6 +228,31 @@ ImageTint=[FGC2]
 DynamicVariables=1
 Group=DynamicColors
 LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]
+
+[Repeat]
+Meter=Image
+X=(20*#Scale#)R
+Y=(#GH#*0.63)
+W=(20*#scale#*#ShowRepeat#)
+H=(20*#scale#*#ShowRepeat#)
+Hidden=(1-#ShowRepeat#)
+Grayscale=1
+Group=DynamicColors | Music
+ImageTint=[FGC2]
+DynamicVariables=1
+LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Repeat"]
+[Repeat0]
+ImageAlpha=150
+ImageName=#@#Icons\Repeat.png
+LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat1][!UpdateMeter Repeat][!Redraw][!CommandMeasure State#NowPlayingMedia# "Repeat"]
+[Repeat1]
+ImageAlpha=255
+ImageName=#@#Icons\Repeat.png
+LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat2][!UpdateMeter Repeat][!Redraw][!CommandMeasure State#NowPlayingMedia# "Repeat"]
+[Repeat2]
+ImageAlpha=255
+ImageName=#@#Icons\RepeatOne.png
+LeftMouseUpAction=[!SetOption Repeat MeterStyle Repeat0][!UpdateMeter Repeat][!Redraw][!CommandMeasure State#NowPlayingMedia# "Repeat"]
 
 [ProgBar]
 Meter=Shape

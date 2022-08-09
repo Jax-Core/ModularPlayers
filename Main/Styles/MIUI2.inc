@@ -4,9 +4,9 @@ GH=(170*#scale#)
 P=(22*#Scale#)
 
 
-Shuffle=0
+Shuffle=1
 Control=1
-Repeat=0
+Repeat=1
 Heart=1
 Prog=1
 ;==============================================================================================
@@ -166,7 +166,7 @@ LeftMouseUpAction=[!SetOption Heart MeterStyle Fullheart][!UpdateMeter Heart][!R
 Meter=Image
 ImageName=#@#Icons\Shuffle.png
 X=(20*#Scale#)R
-Y=(#GH#*0.625)
+Y=(#GH#*0.63)
 W=(20*#scale#)
 H=(20*#scale#)
 Grayscale=1
@@ -231,7 +231,7 @@ LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]
 [Repeat]
 Meter=Image
 X=(20*#Scale#)R
-Y=(#GH#*0.625)
+Y=(#GH#*0.63)
 W=(20*#scale#)
 H=(20*#scale#)
 Grayscale=1

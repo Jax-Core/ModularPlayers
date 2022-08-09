@@ -1,14 +1,13 @@
-[ExtraControlsTitle]
-Meter=String
-Text="Extra Controls"
-MeterStyle=Set.String:S | Set.OptionCat:S
 [Option1]
 Meter=String
-Text="Shuffle Button"
+Text="Show shuffle Button"
 MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:02]
+Meter=Shape
+MeterStyle=Set.Div:S
 [Option2]
 Meter=String
-Text="Repeat Button"
+Text="Show repeat Button"
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ; ---------------------------------------------------------------------------- ;

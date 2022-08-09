@@ -1,4 +1,4 @@
 [Variables]
-ShowShuffle=1
-ShowRepeat=1
+ShowShuffle=0
+ShowRepeat=0
 Scale=1

@@ -154,7 +154,7 @@ Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
 ImageTint=[FGC2]
 DynamicVariables=1
-Group=DynamicColors
+Group=DynamicColors | Music
 [FullHeart]
 ImageName=#@#Icons\HeartFull.png
 LeftMouseUpAction=[!SetOption Heart MeterStyle EmptyHeart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "ToggleThumbsDown"]
@@ -193,7 +193,7 @@ Padding=(5*#scale#),(5*#scale#),(5*#scale#),(5*#scale#)
 Grayscale=1
 ImageTint=[FGC2]
 DynamicVariables=1
-Group=DynamicColors
+Group=DynamicColors | Music
 LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
 
 [PlayPause]

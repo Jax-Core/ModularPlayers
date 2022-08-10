@@ -39,6 +39,13 @@ MeterStyle=Set.Div:S
 Meter=String
 Text="Bar cap"
 MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:06]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option17]
+Meter=String
+Text="Hide player name and icon"
+MeterStyle=Set.String:S | Set.OptionName:S
 
 [ColorTitle]
 Meter=String
@@ -163,6 +170,10 @@ Meter=String
 Text=Triangle
 FontColor=[&Func:returnBool('Cap', 'Triangle', '#Set.Pri_color#', '#Set.Text_Color#')]
 MeterStyle=Set.String:S | Set.PickOption3_2:S
+[HidePlayerInfo]
+Meter=Shape
+MeterStyle=Set.Bool:S
+Y=([Option17:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
 [Primary]
 Meter=Shape
@@ -178,7 +189,7 @@ Meter=Shape
 MeterStyle=Set.ColorPacity:S
 Y=([Option22:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Type=Num|1|255
-[Value21]
+[Value22]
 Meter=String
 Text=#SecondaryOpacity#
 MeterStyle=Set.String:S | Set.Pacity:S

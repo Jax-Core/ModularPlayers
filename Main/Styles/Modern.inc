@@ -49,6 +49,7 @@ Text=[\xe3a1]
 FontFace=Material Icons Round
 FontSize=(12*#Scale#)
 Group=Music
+Hidden=#HidePlayerInfo#
 Container=C
 
 [Name]
@@ -62,13 +63,14 @@ Text=[#PlayerType#Player]
 DynamicVariables=1
 FontSize=(9*#Scale#)
 Group=Music
+Hidden=#HidePlayerInfo#
 Container=C
 
 [Track]
 Meter=String
 MeterStyle=String:S
 X=(#P#)
-Y=(#P#)R
+Y=(#P#+#P#*2*(1-#HidePlayerInfo#))
 W=(#GW#-(80*#Scale#)-3*#P#)
 ClipString=1
 Text=[#PlayerType#Track]

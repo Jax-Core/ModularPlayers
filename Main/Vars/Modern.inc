@@ -15,3 +15,4 @@ FontColor=255,255,255
 FontColor2=150,150,150
 AccentColor=2, 115, 205
 Scale=1
+HidePlayerInfo=0

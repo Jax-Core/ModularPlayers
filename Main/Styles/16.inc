@@ -190,7 +190,7 @@ H=(28*#scale#)
 Grayscale=1
 ImageTint=#FontColor#
 DynamicVariables=1
-Group=DynamicColors
+Group=Music
 LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Previous"]
 
 
@@ -204,7 +204,7 @@ H=(32*#scale#)
 Grayscale=1
 ImageTint=#FontColor#
 DynamicVariables=1
-Group=DynamicColors
+Group=Music
 [Play]
 ImageName=#@#Icons\16Play.png
 LeftMouseUpAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw][!CommandMeasure State#NowPlayingMedia# "PlayPause"]
@@ -222,5 +222,5 @@ H=(28*#scale#)
 Grayscale=1
 ImageTint=#FontColor#
 DynamicVariables=1
-Group=DynamicColors
+Group=Music
 LeftMouseUpAction=[!CommandMeasure State#NowPlayingMedia# "Next"]

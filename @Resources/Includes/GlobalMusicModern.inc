@@ -7,7 +7,7 @@ NowPlayingMedia=Modern
 
 [stateModern]
 Measure=Plugin
-WindowsNowPlaying
+Plugin=WindowsNowPlaying
 PlayerType=State
 OnChangeAction=[!CommandMeasure Func "checkMediaModern()"]
 DynamicVariables=1
@@ -22,7 +22,7 @@ Group=MusicGru
 
 [modernPlayer]
 Measure=String
-String=MediaPlayerDLL
+String=Windows
 UpdateDivider=-1
 Group=Music | modern
 DynamicVariables=1
@@ -30,7 +30,7 @@ DynamicVariables=1
 
 [modernCover]
 Measure=Plugin
-WindowsNowPlaying
+Plugin=WindowsNowPlaying
 PlayerType=Cover
 Substitute="":"#@#Images\Default.png"
 UpdateDivider=1
@@ -40,7 +40,7 @@ DynamicVariables=1
 
 [modernArtist]
 Measure=Plugin
-WindowsNowPlaying
+Plugin=WindowsNowPlaying
 PlayerType=Artist
 UpdateDivider=1
 Group=Music | modern
@@ -49,7 +49,7 @@ DynamicVariables=1
 
 [modernTrack]
 Measure=Plugin
-WindowsNowPlaying
+Plugin=WindowsNowPlaying
 PlayerType=Title
 OnChangeAction=[!UpdateMeterGroup Music][!Redraw]
 UpdateDivider=1
@@ -59,7 +59,7 @@ DynamicVariables=1
 
 [modernProgress]
 Measure=Plugin
-WindowsNowPlaying
+Plugin=WindowsNowPlaying
 PlayerType=Progress
 Substitute="NaN":"1"
 UpdateDivider=1
@@ -69,7 +69,7 @@ DynamicVariables=1
 
 [modernCurrentPosition]
 Measure=Plugin
-WindowsNowPlaying
+Plugin=WindowsNowPlaying
 PlayerType=Position
 UpdateDivider=1
 Group=Music | modern
@@ -78,7 +78,7 @@ DynamicVariables=1
 
 [modernLength]
 Measure=Plugin
-WindowsNowPlaying
+Plugin=WindowsNowPlaying
 PlayerType=Duration
 UpdateDivider=1
 Group=Music | modern
@@ -87,7 +87,7 @@ DynamicVariables=1
 
 [modernRepeat]
 Measure=Plugin
-WindowsNowPlaying
+Plugin=WindowsNowPlaying
 PlayerType=Repeat
 IfCondition=modernRepeat = 1
 IfTrueAction=[!SetOption Repeat MeterStyle Repeat1][!UpdateMeter Repeat][!Redraw]
@@ -101,7 +101,7 @@ Group=Music | modern
 
 [modernShuffle]
 Measure=Plugin
-WindowsNowPlaying
+Plugin=WindowsNowPlaying
 PlayerType=Shuffle
 IfCondition=modernShuffle = 0
 IfTrueAction=[!SetOption Shuffle MeterStyle "Shuffle0"][!UpdateMeter Shuffle][!Redraw]

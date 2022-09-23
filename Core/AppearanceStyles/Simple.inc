@@ -12,6 +12,10 @@ Group=Card
 Meter=String
 Text=Accent color 2
 MeterStyle=Set.String:S | Set.OptionName:S
+[Divider113]
+Meter=Shape
+MeterStyle=Set.Div:S
+Group=Card
 [Option13]
 Meter=String
 Text=Background color

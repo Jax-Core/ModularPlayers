@@ -61,6 +61,14 @@ MeterStyle=Set.Div:S
 Meter=String
 Text=Text scrolling multiplier
 MeterStyle=Set.String:S | Set.OptionName:S
+[Divider8]
+Meter=Shape
+MeterStyle=Set.Div:S
+
+[Option18]
+Meter=String
+Text=Main color
+MeterStyle=Set.String:S | Set.OptionName:S
 
 ; ---------------------------------------------------------------------------- ;
 ;                                   Function                                   ;
@@ -141,6 +149,10 @@ Y=([Option17:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Meter=String
 Text=#RollSpeedMultiplier#x
 MeterStyle=Set.String:S | Set.Value:S
+[MainColor]
+Meter=Shape
+MeterStyle=Set.Color:S
+Y=([Option18:Y]-#Set.P#+(-30/2+8)*[Set.S])
 ; ---------------------------------------------------------------------------- ;
 ;                                    Anchor                                    ;
 ; ---------------------------------------------------------------------------- ;

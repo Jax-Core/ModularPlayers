@@ -1,2 +1,2 @@
 [Variables]
-Core.patchNoteCheckvariable=enhan
+Core.patchNoteCheckvariable=Jax

@@ -71,11 +71,11 @@ Shape2=
 [B11]
 Shape=Rectangle 0,0,(200*#scale#),#GH# | StrokeWidth 0 | Fill RadialGradient this
 This=(-(200*#scale#)/2),0,0,0,(#GH#/2),(#GH#/2) | [AC] ; 0.2 | 0,0,0,1 ; 1.0
-Shape2=Rectangle (20*#scale#),#P#,(#BarW#*#Scale#),(#GH#-#P#*2),(#BarCorner#*#scale#) | StrokeWidth 0 | Fill Color 255,255,255
+Shape2=Rectangle (20*#scale#),#P#,(#BarW#*#Scale#),(#GH#-#P#*2),(#BarCorner#*#scale#) | StrokeWidth 0 | Fill Color #MainColor#
 [B01]
 Shape=Rectangle 0,0,(200*#scale#),#GH# | StrokeWidth 0 | Fill Color 0,0,0,1
 This=(-(200*#scale#)/2),0,0,0,(#GH#/2),(#GH#/2) | [AC] ; 0.2 | 0,0,0,1 ; 1.0
-Shape2=Rectangle (20*#scale#),#P#,(#BarW#*#Scale#),(#GH#-#P#*2),(#BarCorner#*#scale#) | StrokeWidth 0 | Fill Color 255,255,255
+Shape2=Rectangle (20*#scale#),#P#,(#BarW#*#Scale#),(#GH#-#P#*2),(#BarCorner#*#scale#) | StrokeWidth 0 | Fill Color #MainColor#
 
 
 [CreateShadow0]
@@ -121,7 +121,7 @@ UpdateDivider=1
 ClipString=2
 FontWeight=600
 FontSize=(16*#scale#)
-FontColor=255,255,255
+FontColor=#MainColor#
 DynamicVariables=1
 MeasureName=#PlayerType#Track
 Group=Music
@@ -140,7 +140,7 @@ DynamicVariables=1
 ClipString=1
 FontSize=(12*#scale#)
 FontFace=Nunito Sans SemiBold
-FontColor=255,255,255,150
+FontColor=#MainColor#,150
 MeasureName=#PlayerType#Artist
 Group=Music
 Container=SMetaDataSection

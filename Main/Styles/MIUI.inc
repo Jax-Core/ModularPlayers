@@ -157,10 +157,10 @@ DynamicVariables=1
 Group=DynamicColors | Music
 [FullHeart]
 ImageName=#@#Icons\HeartFull.png
-LeftMouseUpAction=[!SetOption Heart MeterStyle EmptyHeart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "ToggleThumbsDown"]
+LeftMouseUpAction=[!SetOption Heart MeterStyle EmptyHeart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "SetRating 0"]
 [EmptyHeart]
 ImageName=#@#Icons\Heart.png
-LeftMouseUpAction=[!SetOption Heart MeterStyle Fullheart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "ToggleThumbsUp"]
+LeftMouseUpAction=[!SetOption Heart MeterStyle Fullheart][!UpdateMeter Heart][!Redraw][!CommandMeasure State#NowPlayingMedia# "SetRating 10"]
 
 [Shuffle]
 Meter=Image
